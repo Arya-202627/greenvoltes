@@ -18,7 +18,7 @@ const solarServices = [
             'Reduce electricity bill to zero',
             'Earn from excess power via net metering',
             'No battery required — lower cost',
-            'Government subsidy up to ₹78,000 under PM Surya Ghar',
+            'Government subsidy of ₹78,000 available',
             'ROI in 3-5 years',
         ],
         idealFor: 'Homes and businesses with reliable grid supply looking to reduce electricity costs.',
@@ -96,7 +96,7 @@ const projectTypes = [
         icon: <Home size={32} />,
         title: 'Residential Solar',
         desc: 'Custom-designed rooftop solar systems for Indian homes. We handle everything from design to subsidies, making your home a power-generating asset.',
-        benefits: ['Custom roof design', '₹78,000 subsidy assistance', 'EMI available', 'Quick installation'],
+        benefits: ['Custom roof design', '₹78,000 Government subsidy', 'EMI available', 'Quick installation'],
         image: '/images/hero-solar.png',
     },
     {

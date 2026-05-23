@@ -60,7 +60,7 @@ export default function SolarSystemsPage() {
                                 <ul className="benefit-list">
                                     <li><CheckCircle2 size={18} /> <strong>Zero electricity bills</strong> — net metering credits offset your consumption</li>
                                     <li><CheckCircle2 size={18} /> <strong>No battery cost</strong> — lowest upfront investment among all solar systems</li>
-                                    <li><CheckCircle2 size={18} /> <strong>Government subsidy</strong> — up to ₹78,000 subsidy under PM Surya Ghar scheme</li>
+                                                                    <li><CheckCircle2 size={18} /> <strong>Government subsidy</strong> — ₹78,000 subsidy available</li>
                                     <li><CheckCircle2 size={18} /> <strong>Fast ROI</strong> — recover investment in 3-5 years</li>
                                     <li><CheckCircle2 size={18} /> <strong>Low maintenance</strong> — minimal moving parts, easy to maintain</li>
                                     <li><CheckCircle2 size={18} /> <strong>25-year lifespan</strong> — panels degrade only ~0.5% per year</li>
@@ -82,18 +82,11 @@ export default function SolarSystemsPage() {
                             borderRadius: 16, padding: 32, marginTop: 24
                         }}>
                             <h4 style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 16, color: '#0FA958' }}>
-                                <IndianRupee size={20} /> Government Subsidy Information
+                                <IndianRupee size={20} /> Government Subsidy
                             </h4>
-                            <p style={{ color: '#475569', lineHeight: 1.8, marginBottom: 12 }}>
-                                Under the <strong>PM Surya Ghar Muft Bijli Yojana</strong> and <strong>KSEB subsidy scheme</strong>,
-                                residential rooftop solar installations can avail significant subsidies:
+                            <p style={{ color: '#475569', lineHeight: 1.8, marginBottom: 0 }}>
+                                Get up to <strong>₹78,000 Government Subsidy</strong> for your residential rooftop solar installation. GreenVolt handles the entire subsidy paperwork and approvals for you.
                             </p>
-                            <ul className="benefit-list">
-                                <li><CheckCircle2 size={16} /> 1 kW Capacity: ₹30,000 subsidy (Central Govt)</li>
-                                <li><CheckCircle2 size={16} /> 2 kW Capacity: ₹60,000 subsidy (Central Govt)</li>
-                                <li><CheckCircle2 size={16} /> 3 kW and Above: Flat ₹78,000 subsidy (Central Govt)</li>
-                                <li><CheckCircle2 size={16} /> GreenVolt handles entire subsidy paperwork for you</li>
-                            </ul>
                         </div>
                     </AnimatedSection>
                 </div>

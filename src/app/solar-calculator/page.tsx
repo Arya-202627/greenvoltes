@@ -243,7 +243,7 @@ export default function SolarCalculatorPage() {
                             {
                                 icon: <IndianRupee size={28} />,
                                 title: 'Government Subsidy',
-                                desc: 'Under PM Surya Ghar scheme, get ₹30,000/kW for up to 2 kW and an additional ₹18,000 for the 3rd kW, up to a maximum flat subsidy of ₹78,000.',
+                                desc: 'Get a government subsidy of up to ₹78,000 on residential solar installations.',
                             },
                             {
                                 icon: <TrendingUp size={28} />,
