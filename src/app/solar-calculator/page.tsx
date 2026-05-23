@@ -21,8 +21,9 @@ export default function SolarCalculatorPage() {
 
     // Subsidy calculation
     const getSubsidy = (kw: number) => {
-        if (kw <= 3) return kw * 18000;
-        return 3 * 18000 + Math.min(kw - 3, 7) * 9000;
+        if (kw <= 2) return kw * 30000;
+        if (kw <= 3) return 60000 + (kw - 2) * 18000;
+        return 78000;
     };
     const subsidy = getSubsidy(requiredKW);
     const netCost = Math.max(0, totalCost - subsidy);
@@ -242,7 +243,7 @@ export default function SolarCalculatorPage() {
                             {
                                 icon: <IndianRupee size={28} />,
                                 title: 'Government Subsidy',
-                                desc: 'Under PM Surya Ghar scheme, get up to ₹18,000/kW subsidy for up to 3 kW and ₹9,000/kW for 3-10 kW.',
+                                desc: 'Under PM Surya Ghar scheme, get ₹30,000/kW for up to 2 kW and an additional ₹18,000 for the 3rd kW, up to a maximum flat subsidy of ₹78,000.',
                             },
                             {
                                 icon: <TrendingUp size={28} />,

@@ -60,7 +60,7 @@ export default function SolarSystemsPage() {
                                 <ul className="benefit-list">
                                     <li><CheckCircle2 size={18} /> <strong>Zero electricity bills</strong> — net metering credits offset your consumption</li>
                                     <li><CheckCircle2 size={18} /> <strong>No battery cost</strong> — lowest upfront investment among all solar systems</li>
-                                    <li><CheckCircle2 size={18} /> <strong>Government subsidy</strong> — up to 40% subsidy under PM Surya Ghar scheme</li>
+                                    <li><CheckCircle2 size={18} /> <strong>Government subsidy</strong> — up to ₹78,000 subsidy under PM Surya Ghar scheme</li>
                                     <li><CheckCircle2 size={18} /> <strong>Fast ROI</strong> — recover investment in 3-5 years</li>
                                     <li><CheckCircle2 size={18} /> <strong>Low maintenance</strong> — minimal moving parts, easy to maintain</li>
                                     <li><CheckCircle2 size={18} /> <strong>25-year lifespan</strong> — panels degrade only ~0.5% per year</li>
@@ -89,9 +89,9 @@ export default function SolarSystemsPage() {
                                 residential rooftop solar installations can avail significant subsidies:
                             </p>
                             <ul className="benefit-list">
-                                <li><CheckCircle2 size={16} /> Up to 3 kW: ₹18,000/kW subsidy (Central Govt)</li>
-                                <li><CheckCircle2 size={16} /> 3 kW to 10 kW: ₹9,000/kW for capacity above 3 kW</li>
-                                <li><CheckCircle2 size={16} /> Additional KSEB incentives may apply</li>
+                                <li><CheckCircle2 size={16} /> 1 kW Capacity: ₹30,000 subsidy (Central Govt)</li>
+                                <li><CheckCircle2 size={16} /> 2 kW Capacity: ₹60,000 subsidy (Central Govt)</li>
+                                <li><CheckCircle2 size={16} /> 3 kW and Above: Flat ₹78,000 subsidy (Central Govt)</li>
                                 <li><CheckCircle2 size={16} /> GreenVolt handles entire subsidy paperwork for you</li>
                             </ul>
                         </div>
