@@ -780,6 +780,9 @@ h6 {
   gap: 10px;
   text-decoration: none;
   color: white;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 6px 14px;
+  border-radius: 12px;
 }
 
 .navbar-logo-text {
