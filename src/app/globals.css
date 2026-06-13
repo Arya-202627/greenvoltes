@@ -737,14 +737,33 @@ h6 {
   right: 0;
   z-index: 1000;
   padding: 16px 24px;
+  background: rgba(15, 23, 42, 0.92);
+  backdrop-filter: blur(12px);
   transition: all 0.3s ease;
 }
 
 .navbar.scrolled {
-  background: rgba(10, 22, 40, 0.95);
+  background: rgba(255, 255, 255, 0.97);
   backdrop-filter: blur(20px);
   padding: 12px 24px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+}
+
+.navbar.scrolled .navbar-links a {
+  color: var(--text-secondary);
+}
+
+.navbar.scrolled .navbar-links a:hover,
+.navbar.scrolled .navbar-links a.active {
+  color: var(--primary);
+}
+
+.navbar.scrolled .navbar-links a::after {
+  background: var(--primary);
+}
+
+.navbar.scrolled .mobile-toggle span {
+  background: var(--text-primary);
 }
 
 .navbar-inner {
@@ -1191,8 +1210,8 @@ h6 {
 
 /* ===== Page Header ===== */
 .page-header {
-  background: var(--secondary);
-  color: white;
+  background: linear-gradient(135deg, #f0fdf4 0%, #ecfeff 50%, #f0f9ff 100%);
+  color: var(--text-primary);
   padding: 140px 24px 80px;
   text-align: center;
   position: relative;
@@ -1206,8 +1225,8 @@ h6 {
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle at 30% 50%, rgba(15, 169, 88, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 70% 80%, rgba(15, 169, 88, 0.05) 0%, transparent 50%);
+  background: radial-gradient(circle at 30% 50%, rgba(15, 169, 88, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 70% 80%, rgba(15, 169, 88, 0.04) 0%, transparent 50%);
 }
 
 .page-header-content {
@@ -1221,7 +1240,7 @@ h6 {
 }
 
 .page-header p {
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--text-secondary);
   font-size: 1.125rem;
   max-width: 600px;
   margin: 0 auto;
@@ -1322,12 +1341,21 @@ h6 {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(10, 22, 40, 0.98);
+    background: rgba(255, 255, 255, 0.98);
     backdrop-filter: blur(20px);
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 24px;
+  }
+
+  .navbar-links.open a {
+    color: var(--text-primary);
+    font-size: 1.1rem;
+  }
+
+  .navbar-links.open a:hover {
+    color: var(--primary);
   }
 
   .navbar-links.open {
