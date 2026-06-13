@@ -30,7 +30,7 @@ export default function Navbar() {
   return (
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="navbar-inner">
-        <Link href="/" className="navbar-logo" style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+        <Link href="/" className="navbar-logo" style={{ display: 'flex', alignItems: 'center', gap: 10, background: 'rgba(255, 255, 255, 0.95)', padding: '6px 14px', borderRadius: '12px' }}>
           <div style={{ position: 'relative', width: 220, height: 60 }}>
             <Image
               src="/images/logo.png"
@@ -64,7 +64,7 @@ export default function Navbar() {
                 right: 24,
                 background: 'none',
                 border: 'none',
-                color: 'white',
+                color: '#0F172A',
                 cursor: 'pointer',
               }}
             >
