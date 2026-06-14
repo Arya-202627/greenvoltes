@@ -63,16 +63,12 @@ export default function SolarSystemsPage() {
                                                                     <li><CheckCircle2 size={18} /> <strong>Government subsidy</strong> — ₹78,000 subsidy available</li>
                                     <li><CheckCircle2 size={18} /> <strong>Fast ROI</strong> — recover investment in 3-5 years</li>
                                     <li><CheckCircle2 size={18} /> <strong>Low maintenance</strong> — minimal moving parts, easy to maintain</li>
-                                    <li><CheckCircle2 size={18} /> <strong>25-year lifespan</strong> — panels degrade only ~0.5% per year</li>
+                                    <li><CheckCircle2 size={18} /> <strong>30-year lifespan</strong> — panels degrade only ~0.5% per year</li>
                                 </ul>
                             </div>
                         </AnimatedSection>
 
-                        <AnimatedSection delay={0.3}>
-                            <div style={{ borderRadius: 20, overflow: 'hidden', position: 'relative', height: 450 }}>
-                                <Image src="/images/ongrid-diagram.png" alt="On-Grid Solar System Diagram" fill style={{ objectFit: 'contain', borderRadius: 20 }} />
-                            </div>
-                        </AnimatedSection>
+
                     </div>
 
                     <AnimatedSection>
@@ -138,11 +134,7 @@ export default function SolarSystemsPage() {
                             </div>
                         </AnimatedSection>
 
-                        <AnimatedSection delay={0.3}>
-                            <div style={{ borderRadius: 20, overflow: 'hidden', position: 'relative', height: 450 }}>
-                                <Image src="/images/offgrid-diagram.png" alt="Off-Grid Solar System Diagram" fill style={{ objectFit: 'contain', borderRadius: 20 }} />
-                            </div>
-                        </AnimatedSection>
+
                     </div>
 
                     <AnimatedSection>
@@ -210,11 +202,7 @@ export default function SolarSystemsPage() {
                             </div>
                         </AnimatedSection>
 
-                        <AnimatedSection delay={0.3}>
-                            <div style={{ borderRadius: 20, overflow: 'hidden', position: 'relative', height: 450 }}>
-                                <Image src="/images/hybrid-diagram.png" alt="Hybrid Solar System Diagram" fill style={{ objectFit: 'contain', borderRadius: 20 }} />
-                            </div>
-                        </AnimatedSection>
+
                     </div>
                 </div>
             </section>
@@ -265,7 +253,7 @@ export default function SolarSystemsPage() {
                                         ['Government Subsidy', '✅ Available', '❌ Limited', '✅ Available'],
                                         ['Best For', 'Cost savings', 'Remote areas', 'All-round solution'],
                                         ['Complexity', 'Simple', 'Complex', 'Moderate'],
-                                        ['Lifespan', '25+ years', '15-20 years', '20-25 years'],
+                                        ['Lifespan', '30+ years', '15-20 years', '20-25 years'],
                                     ].map(([feature, onGrid, offGrid, hybrid], i) => (
                                         <tr key={i}>
                                             <td style={{ fontWeight: 600 }}>{feature}</td>

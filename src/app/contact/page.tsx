@@ -9,6 +9,29 @@ export default function ContactPage() {
 
     const handleSubmit = (e: FormEvent) => {
         e.preventDefault();
+
+        // Collect form data
+        const name = (document.getElementById('contact-name') as HTMLInputElement)?.value || '';
+        const phone = (document.getElementById('contact-phone') as HTMLInputElement)?.value || '';
+        const location = (document.getElementById('contact-location') as HTMLInputElement)?.value || '';
+        const requirement = (document.getElementById('contact-requirement') as HTMLSelectElement)?.value || '';
+        const size = (document.getElementById('contact-size') as HTMLSelectElement)?.value || '';
+        const details = (document.getElementById('contact-message') as HTMLTextAreaElement)?.value || '';
+
+        // Format WhatsApp message
+        const message = `🌞 *New Contact Form Submission*%0A%0A` +
+            `👤 *Name:* ${name}%0A` +
+            `📱 *Phone:* ${phone}%0A` +
+            `📍 *Location:* ${location}%0A` +
+            `⚡ *Requirement:* ${requirement || 'Not specified'}%0A` +
+            `📏 *System Size:* ${size || 'Not specified'}%0A` +
+            `📝 *Details:* ${details || 'No additional details'}%0A%0A` +
+            `_Sent from GreenVolt website - Contact Form_`;
+
+        // Open WhatsApp with pre-filled message to Dinesh
+        const whatsappUrl = `https://wa.me/918714889721?text=${message}`;
+        window.open(whatsappUrl, '_blank');
+
         setSubmitted(true);
     };
 

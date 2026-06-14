@@ -14,6 +14,27 @@ export default function QuoteModal({ isOpen, onClose }: QuoteModalProps) {
 
     const handleSubmit = (e: FormEvent) => {
         e.preventDefault();
+
+        // Collect form data
+        const name = (document.getElementById('quote-name') as HTMLInputElement)?.value || '';
+        const phone = (document.getElementById('quote-phone') as HTMLInputElement)?.value || '';
+        const location = (document.getElementById('quote-location') as HTMLInputElement)?.value || '';
+        const requirement = (document.getElementById('quote-requirement') as HTMLSelectElement)?.value || '';
+        const bill = (document.getElementById('quote-bill') as HTMLInputElement)?.value || '';
+
+        // Format WhatsApp message
+        const message = `🌞 *New Free Quote Request*%0A%0A` +
+            `👤 *Name:* ${name}%0A` +
+            `📱 *Phone:* ${phone}%0A` +
+            `📍 *Location:* ${location}%0A` +
+            `⚡ *Requirement:* ${requirement || 'Not specified'}%0A` +
+            `💰 *Monthly Bill:* ${bill ? '₹' + bill : 'Not specified'}%0A%0A` +
+            `_Sent from GreenVolt website - Get Free Quote_`;
+
+        // Open WhatsApp with pre-filled message to Dinesh
+        const whatsappUrl = `https://wa.me/918714889721?text=${message}`;
+        window.open(whatsappUrl, '_blank');
+
         setSubmitted(true);
         setTimeout(() => {
             setSubmitted(false);

@@ -22,7 +22,7 @@ const solarServices = [
             'ROI in 3-5 years',
         ],
         idealFor: 'Homes and businesses with reliable grid supply looking to reduce electricity costs.',
-        image: '/images/ongrid-diagram.png',
+
     },
     {
         id: 'off-grid',
@@ -37,7 +37,7 @@ const solarServices = [
             'Uninterrupted power supply',
         ],
         idealFor: 'Remote locations, areas with frequent power cuts, or those seeking complete grid independence.',
-        image: '/images/offgrid-diagram.png',
+
     },
     {
         id: 'hybrid',
@@ -52,7 +52,7 @@ const solarServices = [
             'Maximum energy utilization',
         ],
         idealFor: 'Homes and businesses that want both cost savings and power backup security.',
-        image: '/images/hybrid-diagram.png',
+
     },
 ];
 
@@ -179,11 +179,7 @@ export default function ServicesPage() {
                                 </div>
                             </AnimatedSection>
 
-                            <AnimatedSection delay={0.3}>
-                                <div style={{ borderRadius: 20, overflow: 'hidden', position: 'relative', height: 400 }}>
-                                    <Image src={service.image} alt={service.title} fill style={{ objectFit: 'cover', borderRadius: 20 }} />
-                                </div>
-                            </AnimatedSection>
+
                         </div>
                     ))}
                 </div>
