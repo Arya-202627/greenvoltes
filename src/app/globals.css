@@ -1,11 +1,11 @@
 @import "tailwindcss";
 
 :root {
-  --primary: #0FA958;
-  --primary-dark: #0C8A46;
-  --primary-light: #12D96E;
-  --secondary: #0A1628;
-  --secondary-light: #132240;
+  --primary: #10B981; /* Light vibrant green */
+  --primary-dark: #059669;
+  --primary-light: #34D399;
+  --secondary: #003366; /* Deep navy blue */
+  --secondary-light: #004B8D;
   --accent: #ffffff;
   --grey-light: #F4F7FA;
   --grey-mid: #E2E8F0;
