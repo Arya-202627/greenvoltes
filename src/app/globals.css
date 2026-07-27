@@ -741,32 +741,30 @@ h6 {
   right: 0;
   z-index: 1000;
   padding: 16px 24px;
-  background: rgba(15, 23, 42, 0.92);
-  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
 }
 
 .navbar.scrolled {
-  background: rgba(255, 255, 255, 0.97);
-  backdrop-filter: blur(20px);
   padding: 12px 24px;
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
 }
 
-.navbar.scrolled .navbar-links a {
+.navbar .navbar-links a {
   color: var(--text-secondary);
 }
 
-.navbar.scrolled .navbar-links a:hover,
-.navbar.scrolled .navbar-links a.active {
+.navbar .navbar-links a:hover,
+.navbar .navbar-links a.active {
   color: var(--primary);
 }
 
-.navbar.scrolled .navbar-links a::after {
+.navbar .navbar-links a::after {
   background: var(--primary);
 }
 
-.navbar.scrolled .mobile-toggle span {
+.navbar .mobile-toggle span {
   background: var(--text-primary);
 }
 
@@ -796,7 +794,7 @@ h6 {
 }
 
 .navbar-logo-text span {
-  color: var(--primary-light);
+  color: var(--primary);
 }
 
 .navbar-links {
@@ -807,7 +805,7 @@ h6 {
 }
 
 .navbar-links a {
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--text-secondary);
   text-decoration: none;
   font-size: 0.9rem;
   font-weight: 500;
@@ -817,7 +815,7 @@ h6 {
 
 .navbar-links a:hover,
 .navbar-links a.active {
-  color: var(--primary-light);
+  color: var(--primary);
 }
 
 .navbar-links a::after {
@@ -827,7 +825,7 @@ h6 {
   left: 0;
   width: 0;
   height: 2px;
-  background: var(--primary-light);
+  background: var(--primary);
   transition: width 0.3s ease;
 }
 
