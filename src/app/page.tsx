@@ -11,7 +11,9 @@ import {
   Phone, TrendingUp, Award, Users, MapPin,
   Cpu, Home, Building2, IndianRupee,
   ClipboardCheck, Palette, Wrench, Headphones,
-  ChevronRight, Sparkles
+  ChevronRight, Sparkles, Factory, Heart,
+  GraduationCap, Hotel, ShoppingBag, Warehouse,
+  Landmark, HardHat
 } from 'lucide-react';
 import AnimatedSection from '@/components/AnimatedSection';
 import QuoteModal from '@/components/QuoteModal';
@@ -114,7 +116,7 @@ export default function HomePage() {
             <div className="hero-badge" style={{ border: '1px solid rgba(255,255,255,0.1)', background: 'rgba(255,255,255,0.05)' }}>
               <div className="flex items-center gap-2">
                 <Sparkles size={16} className="text-yellow-400" />
-                <span>Kerala&apos;s Premium Solar Partner</span>
+                <span>Kerala&apos;s Complete Energy Solutions Partner</span>
               </div>
             </div>
           </motion.div>
@@ -135,8 +137,7 @@ export default function HomePage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
           >
-            Experience the next generation of renewable energy. High-efficiency,
-            interactive, and purely sustainable solutions for a modern Kerala.
+            Experience the next generation of energy solutions. Solar power, smart automation, and industrial systems for a modern Kerala.
           </motion.p>
 
           <motion.div
@@ -205,21 +206,21 @@ export default function HomePage() {
             {[
               {
                 icon: <Sun size={28} />,
-                title: 'On-Grid Smart',
-                desc: 'Intelligent grid connectivity with real-time monitoring and maximum ROI.',
-                link: '/solar-systems#on-grid',
-              },
-              {
-                icon: <Battery size={28} />,
-                title: 'Off-Grid Core',
-                desc: 'Independence by design. Next-gen storage for 24/7 uninterrupted living.',
-                link: '/solar-systems#off-grid',
+                title: 'Renewable Energy Solutions',
+                desc: 'Complete solar power solutions from residential rooftops to industrial EPC, with net metering and maintenance support.',
+                link: '/services',
               },
               {
                 icon: <Cpu size={28} />,
-                title: 'Hybrid Hybrid',
-                desc: 'The complete solution. Reliability of grid with security of storage.',
-                link: '/solar-systems#hybrid',
+                title: 'Smart Power & Automation',
+                desc: 'Intelligent automation for homes and buildings — CCTV, access control, EV charging, and smart energy monitoring.',
+                link: '/services',
+              },
+              {
+                icon: <Zap size={28} />,
+                title: 'Industrial Power Solutions',
+                desc: 'Engineered power systems — PCC, MCC, APFC panels, VFD drives, and hybrid power systems for maximum uptime.',
+                link: '/services',
               },
             ].map((service, i) => (
               <motion.div
@@ -243,6 +244,55 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ===== INDUSTRIES WE SERVE ===== */}
+      <section className="section section-grey reveal-section">
+        <div className="container">
+          <div className="section-header">
+            <div className="section-badge">🏢 Sectors</div>
+            <h2 className="section-title">Industries We Serve</h2>
+            <p className="section-subtitle">
+              Delivering intelligent, reliable and sustainable solutions across diverse sectors
+            </p>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '20px', marginTop: '40px' }}>
+            {[
+              { icon: <Home size={32} />, title: 'Residential Developments' },
+              { icon: <Building2 size={32} />, title: 'Commercial Buildings' },
+              { icon: <Factory size={32} />, title: 'Industrial Facilities' },
+              { icon: <Heart size={32} />, title: 'Hospitals' },
+              { icon: <GraduationCap size={32} />, title: 'Educational Institutions' },
+              { icon: <Hotel size={32} />, title: 'Hotels & Hospitality' },
+              { icon: <ShoppingBag size={32} />, title: 'Retail Spaces' },
+              { icon: <Warehouse size={32} />, title: 'Warehouses' },
+              { icon: <Landmark size={32} />, title: 'Government Projects' },
+              { icon: <HardHat size={32} />, title: 'Infrastructure Developments' },
+            ].map((ind, i) => (
+              <motion.div
+                key={ind.title}
+                whileHover={{ y: -5, boxShadow: '0 10px 25px rgba(0,0,0,0.1)' }}
+                style={{ 
+                  background: 'white', 
+                  padding: '30px 20px', 
+                  borderRadius: '16px',
+                  textAlign: 'center',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  gap: '16px',
+                  border: '1px solid rgba(0,0,0,0.05)'
+                }}
+              >
+                <div style={{ color: 'var(--primary)', background: 'rgba(15,169,88,0.1)', padding: '16px', borderRadius: '50%' }}>
+                  {ind.icon}
+                </div>
+                <h4 style={{ fontWeight: 600, fontSize: '1.1rem', color: 'var(--secondary)' }}>{ind.title}</h4>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ===== WHY CHOOSE US - LUXURY FEEL ===== */}
       <section className="section section-dark reveal-section" style={{ background: 'var(--secondary)' }}>
         <div className="container">
@@ -253,10 +303,10 @@ export default function HomePage() {
 
           <div className="feature-grid">
             {[
-              { icon: <Award size={32} />, title: 'Elite Brands', desc: 'Curated selection of global tier-1 solar technology.' },
-              { icon: <Shield size={32} />, title: 'Lifetime Assurance', desc: 'Extended warranties that go beyond the standard.' },
-              { icon: <Users size={32} />, title: 'Expert Craftsmen', desc: 'MNRE-certified engineers with passion for perfection.' },
-              { icon: <TrendingUp size={32} />, title: 'Maximum Efficiency', desc: 'Highest conversion rates attainable in the market.' },
+              { icon: <Award size={32} />, title: 'Complete Turnkey Solutions', desc: 'End-to-end services from design to commissioning and beyond' },
+              { icon: <Shield size={32} />, title: 'Licensed Electrical Expertise', desc: 'Grade A Licensed Electrical Contractor with full compliance' },
+              { icon: <Users size={32} />, title: 'MNRE Empanelled Vendor', desc: 'Authorized to offer MNRE compliant grid-interactive and standalone energy solutions' },
+              { icon: <TrendingUp size={32} />, title: 'Reliable After-Sales Service', desc: 'Prompt assistance and technical support for continued performance' },
             ].map((item, i) => (
               <div key={item.title} className="glass-card">
                 <div className="why-icon" style={{ background: 'rgba(15,169,88,0.1)' }}>{item.icon}</div>
@@ -265,6 +315,22 @@ export default function HomePage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ===== BRAND QUOTE ===== */}
+      <section className="section bg-white reveal-section" style={{ padding: '60px 0' }}>
+        <div className="container" style={{ textAlign: 'center', maxWidth: '800px' }}>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h3 style={{ fontSize: '2rem', fontStyle: 'italic', color: 'var(--secondary)', lineHeight: 1.5, fontWeight: 300 }}>
+              &ldquo;We deliver more than solutions. We build lasting partnerships powered by trust, quality and performance.&rdquo;
+            </h3>
+          </motion.div>
         </div>
       </section>
 
@@ -285,21 +351,21 @@ export default function HomePage() {
               className="absolute -top-24 -right-24 w-64 h-64 border border-white/10 rounded-full"
             />
 
-            <h2 className="cta-title">Begin Your Solar Legacy</h2>
+            <h2 className="cta-title">Powering Today. Sustaining Tomorrow.</h2>
             <p className="cta-subtitle">
-              Join the luxury movement towards clean energy in Kerala.
-              Schedule your exclusive consultation today.
+              Join the movement towards clean, smart energy in Kerala. Schedule your consultation today.
             </p>
 
             <div style={{ position: 'relative', zIndex: 1, display: 'flex', gap: 16, justifyContent: 'center' }}>
-              <motion.button
-                whileHover={{ scale: 1.05, x: 5 }}
-                className="btn-primary"
-                style={{ background: 'white', color: 'var(--secondary)', boxShadow: '0 10px 40px rgba(255,255,255,0.2)' }}
-                onClick={() => setQuoteOpen(true)}
-              >
-                REQUEST PROPOSAL <ArrowRight size={18} />
-              </motion.button>
+              <Link href="/contact" style={{ textDecoration: 'none' }}>
+                <motion.button
+                  whileHover={{ scale: 1.05, x: 5 }}
+                  className="btn-primary"
+                  style={{ background: 'white', color: 'var(--secondary)', boxShadow: '0 10px 40px rgba(255,255,255,0.2)' }}
+                >
+                  REQUEST CONSULTATION <ArrowRight size={18} />
+                </motion.button>
+              </Link>
             </div>
           </motion.div>
         </div>

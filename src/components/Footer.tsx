@@ -19,9 +19,9 @@ export default function Footer() {
                         />
                     </Link>
                     <p className="footer-brand-desc">
-                        GreenVolt Energy Solutions LLP is Kerala&apos;s trusted solar energy partner.
-                        We provide end-to-end solar installation services for homes and businesses,
-                        making clean energy accessible and affordable for everyone.
+                        GreenVolt Energy Solutions LLP is Kerala&apos;s trusted partner for comprehensive energy solutions.
+                        We provide Solar, Smart Automation, and Industrial Power solutions,
+                        making advanced energy accessible, efficient, and sustainable.
                     </p>
                 </div>
 
@@ -41,11 +41,11 @@ export default function Footer() {
                 <div>
                     <h4 className="footer-heading">Services</h4>
                     <ul className="footer-links">
-                        <li><Link href="/services#on-grid">On-Grid Solar</Link></li>
-                        <li><Link href="/services#off-grid">Off-Grid Solar</Link></li>
-                        <li><Link href="/services#hybrid">Hybrid Solar</Link></li>
+                        <li><Link href="/services#renewable">Renewable Energy</Link></li>
+                        <li><Link href="/services#smart-power">Smart Automation</Link></li>
+                        <li><Link href="/services#industrial">Industrial Power</Link></li>
                         <li><Link href="/services#battery">Battery Systems</Link></li>
-                        <li><Link href="/services#ups">Home UPS</Link></li>
+                        <li><Link href="/services#cctv">CCTV & Security</Link></li>
                         <li><Link href="/services#residential">Residential</Link></li>
                         <li><Link href="/services#commercial">Commercial</Link></li>
                     </ul>
@@ -77,6 +77,7 @@ export default function Footer() {
                                 <div>66/1150, Suite No. A6</div>
                                 <div>Kalabhavan Road, Kaloor</div>
                                 <div>Ernakulam - 682018, Kerala</div>
+                                <div style={{ marginTop: 8, color: '#0FA958', fontSize: '0.85rem' }}>GSTIN: 32A5EF3470ZA1Z8</div>
                             </div>
                         </div>
                     </div>

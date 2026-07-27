@@ -3,7 +3,9 @@
 import Link from 'next/link';
 import {
     Target, Eye, Heart, Shield, Users, Award,
-    ArrowRight, CheckCircle2, Leaf, Lightbulb, Handshake
+    ArrowRight, CheckCircle2, Leaf, Lightbulb, Handshake,
+    ClipboardCheck, PenTool, Settings, Wrench, Headphones,
+    ShieldCheck, Cpu, Rocket, Sun, Battery
 } from 'lucide-react';
 import AnimatedSection, { AnimatedCard } from '@/components/AnimatedSection';
 
@@ -30,19 +32,15 @@ export default function AboutPage() {
                                     Powering Kerala&apos;s Green Future
                                 </h2>
                                 <p style={{ color: '#475569', lineHeight: 1.8, marginBottom: 20, fontSize: '1.05rem' }}>
-                                    <strong>GreenVolt Energy Solutions LLP</strong> is a leading renewable energy company
-                                    based in Kerala, dedicated to making clean, affordable solar energy accessible
-                                    to every home and business.
+                                    <strong>GreenVolt Energy Solutions LLP</strong> is a leading energy solutions company
+                                    based in Kerala, dedicated to delivering innovative, reliable, and sustainable power solutions. 
+                                    We specialize in renewable energy systems, smart power & automation, and industrial power solutions — 
+                                    from compact residential rooftops to large commercial and industrial installations.
                                 </p>
                                 <p style={{ color: '#475569', lineHeight: 1.8, marginBottom: 20 }}>
-                                    We specialize in designing, installing, and maintaining solar power systems —
-                                    from compact residential rooftops to large commercial installations. Our team
-                                    of certified engineers and technicians ensures every project is executed with
-                                    precision, quality, and care.
-                                </p>
-                                <p style={{ color: '#475569', lineHeight: 1.8, marginBottom: 24 }}>
-                                    With a commitment to sustainability and customer satisfaction, we&apos;ve helped
-                                    hundreds of families and businesses across Kerala reduce their energy costs
+                                    Our team of certified engineers and technicians ensures every project is executed with
+                                    precision, quality, and care. With a commitment to sustainability and customer satisfaction, 
+                                    we&apos;ve helped hundreds of families and businesses across Kerala reduce their energy costs
                                     and carbon footprint.
                                 </p>
                                 <ul className="benefit-list">
@@ -124,31 +122,222 @@ export default function AboutPage() {
                 </div>
             </section>
 
-            {/* Core Values */}
+            {/* Our Process */}
             <section className="section">
                 <div className="container">
                     <AnimatedSection>
                         <div className="section-header">
-                            <div className="section-badge">💎 Our Values</div>
-                            <h2 className="section-title">Why GreenVolt Stands Out</h2>
-                            <p className="section-subtitle">Our core values define everything we do</p>
+                            <div className="section-badge">⚙️ OUR PROCESS</div>
+                            <h2 className="section-title">BUILT ON TRUST, DELIVERED WITH EXCELLENCE</h2>
+                            <p className="section-subtitle" style={{ maxWidth: '800px', margin: '0 auto' }}>
+                                From Concept to Completion, We Deliver Value at Every Step. Our streamlined process ensures quality, transparency and timely delivery.
+                            </p>
+                        </div>
+                    </AnimatedSection>
+
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: 24, maxWidth: 900, margin: '0 auto' }}>
+                        {[
+                            { num: 1, title: 'Consultation', desc: 'Understanding your needs and assessing site feasibility', icon: <ClipboardCheck size={24} /> },
+                            { num: 2, title: 'Design & Planning', desc: 'Customized solution design with detailed planning and approvals', icon: <PenTool size={24} /> },
+                            { num: 3, title: 'Engineering & Procurement', desc: 'Engineering excellence and sourcing high-quality components', icon: <Settings size={24} /> },
+                            { num: 4, title: 'Installation & Commissioning', desc: 'Professional installation with rigorous testing and commissioning', icon: <Wrench size={24} /> },
+                            { num: 5, title: 'Operation & Support', desc: 'Reliable maintenance, monitoring and long-term support', icon: <Headphones size={24} /> },
+                        ].map((step, i) => (
+                            <AnimatedCard key={step.title} delay={i * 0.1}>
+                                <div style={{
+                                    display: 'flex', alignItems: 'center', gap: 24, background: 'white', padding: 24,
+                                    borderRadius: 16, boxShadow: '0 4px 20px rgba(0,0,0,0.05)', border: '1px solid rgba(15,169,88,0.1)'
+                                }}>
+                                    <div style={{
+                                        width: 64, height: 64, borderRadius: '50%', background: '#0FA958', color: 'white',
+                                        display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0,
+                                        fontSize: '1.25rem', fontWeight: 'bold'
+                                    }}>
+                                        {step.num}
+                                    </div>
+                                    <div style={{ flex: 1 }}>
+                                        <h3 style={{ fontSize: '1.25rem', marginBottom: 4, display: 'flex', alignItems: 'center', gap: 8 }}>
+                                            {step.title}
+                                        </h3>
+                                        <p style={{ color: '#475569', margin: 0 }}>{step.desc}</p>
+                                    </div>
+                                    <div style={{ color: '#0FA958', opacity: 0.2 }}>
+                                        {step.icon}
+                                    </div>
+                                </div>
+                            </AnimatedCard>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Our Commitment */}
+            <section className="section section-grey">
+                <div className="container">
+                    <AnimatedSection>
+                        <div className="section-header">
+                            <div className="section-badge">🤝 OUR COMMITMENT</div>
+                            <h2 className="section-title">POWERING A BETTER TOMORROW</h2>
+                            <p className="section-subtitle" style={{ maxWidth: '800px', margin: '0 auto' }}>
+                                We are committed to delivering innovative, sustainable and reliable energy solutions that create long-term value for our clients, communities and the environment.
+                            </p>
                         </div>
                     </AnimatedSection>
 
                     <div className="feature-grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))' }}>
                         {[
-                            { icon: <Shield size={28} />, title: 'Quality First', desc: 'We use only premium-grade panels, inverters, and components from trusted global brands.' },
-                            { icon: <Heart size={28} />, title: 'Customer Care', desc: 'Your satisfaction is our priority. We provide dedicated support from consultation to after-sales.' },
-                            { icon: <Leaf size={28} />, title: 'Sustainability', desc: 'Every installation contributes to a cleaner planet. We are committed to a greener Kerala.' },
-                            { icon: <Lightbulb size={28} />, title: 'Innovation', desc: 'We stay updated with the latest solar technology to deliver the most efficient systems.' },
-                            { icon: <Handshake size={28} />, title: 'Integrity', desc: 'Transparent pricing, honest advice, and no hidden costs. Trust is the foundation of our business.' },
-                            { icon: <Users size={28} />, title: 'Expert Team', desc: 'MNRE-trained engineers and certified technicians with years of hands-on experience.' },
+                            { icon: <ShieldCheck size={32} />, title: 'Quality Assurance', desc: 'Delivering solutions that meet the highest standards of quality and safety' },
+                            { icon: <Leaf size={32} />, title: 'Sustainability', desc: 'Promoting clean energy solutions that protect the planet for future generations' },
+                            { icon: <Handshake size={32} />, title: 'Integrity', desc: 'Building relationships based on trust, transparency and ethical business practices' },
+                            { icon: <Heart size={32} />, title: 'Customer Focus', desc: 'Understanding our clients\' needs and delivering solutions that exceed expectations' },
+                        ].map((item, i) => (
+                            <AnimatedCard key={item.title} delay={i * 0.1}>
+                                <div className="service-card" style={{ padding: 32, textAlign: 'center', height: '100%' }}>
+                                    <div style={{ color: '#0FA958', marginBottom: 16, display: 'flex', justifyContent: 'center' }}>
+                                        {item.icon}
+                                    </div>
+                                    <h3 style={{ fontSize: '1.25rem', marginBottom: 12 }}>{item.title}</h3>
+                                    <p style={{ color: '#475569', lineHeight: 1.6 }}>{item.desc}</p>
+                                </div>
+                            </AnimatedCard>
+                        ))}
+                    </div>
+
+                    <div style={{ textAlign: 'center', marginTop: 48 }}>
+                        <p style={{ fontSize: '1.25rem', fontStyle: 'italic', color: '#0FA958', fontWeight: 500 }}>
+                            &quot;We don&apos;t just build systems, we build lasting impact.&quot;
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            {/* Why GreenVolt */}
+            <section className="section">
+                <div className="container">
+                    <AnimatedSection>
+                        <div className="section-header">
+                            <div className="section-badge">💎 Why Choose Us</div>
+                            <h2 className="section-title">Why GreenVolt?</h2>
+                            <p className="section-subtitle">Delivering excellence through our core strengths</p>
+                        </div>
+                    </AnimatedSection>
+
+                    <div className="feature-grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))' }}>
+                        {[
+                            { icon: <Wrench size={24} />, title: 'Complete Turnkey Engineering Solutions', desc: 'End-to-end services from design to commissioning and beyond' },
+                            { icon: <ClipboardCheck size={24} />, title: 'End-to-End Project Management', desc: 'Dedicated planning, execution and quality control at every stage' },
+                            { icon: <ShieldCheck size={24} />, title: 'Licensed Electrical Contracting Expertise', desc: 'Grade A Licensed Electrical Contractor with full compliance' },
+                            { icon: <Award size={24} />, title: 'Safety & Quality Driven', desc: 'Strict adherence to safety standards and superior quality practices' },
+                            { icon: <CheckCircle2 size={24} />, title: 'MNRE Empanelled Vendor', desc: 'Authorized to offer MNRE compliant grid-interactive and standalone energy solutions' },
+                            { icon: <Eye size={24} />, title: 'Transparent Execution', desc: 'Clear communication, timely updates and complete transparency' },
+                            { icon: <Cpu size={24} />, title: 'Smart Building Integration', desc: 'Automation, monitoring and security for modern buildings' },
+                            { icon: <Headphones size={24} />, title: 'Reliable After-Sales Service', desc: 'Prompt assistance and technical support for continued performance' },
+                            { icon: <Users size={24} />, title: 'Experienced Engineering Team', desc: 'Skilled professionals delivering reliable and efficient solutions' },
+                            { icon: <Settings size={24} />, title: 'Long-Term Maintenance Services', desc: 'AMC and maintenance programs for continued performance' },
                         ].map((value, i) => (
-                            <AnimatedCard key={value.title} delay={i * 0.08}>
-                                <div className="value-card">
+                            <AnimatedCard key={value.title} delay={i * 0.05}>
+                                <div className="value-card" style={{ height: '100%' }}>
                                     <div className="value-icon">{value.icon}</div>
-                                    <h3 style={{ fontSize: '1.125rem', marginBottom: 8 }}>{value.title}</h3>
+                                    <h3 style={{ fontSize: '1.1rem', marginBottom: 8 }}>{value.title}</h3>
                                     <p style={{ color: '#475569', fontSize: '0.9rem', lineHeight: 1.6 }}>{value.desc}</p>
+                                </div>
+                            </AnimatedCard>
+                        ))}
+                    </div>
+
+                    <div style={{ textAlign: 'center', marginTop: 48 }}>
+                        <p style={{ fontSize: '1.2rem', fontStyle: 'italic', color: '#0A1628', fontWeight: 600 }}>
+                            &quot;We deliver more than solutions. We build lasting partnerships powered by trust, quality and performance.&quot;
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            {/* Certifications */}
+            <section className="section section-grey">
+                <div className="container">
+                    <AnimatedSection>
+                        <div className="section-header">
+                            <div className="section-badge">🏅 Trust & Credibility</div>
+                            <h2 className="section-title">Certifications & Approvals</h2>
+                        </div>
+                    </AnimatedSection>
+
+                    <div className="feature-grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))' }}>
+                        {[
+                            { 
+                                icon: <ShieldCheck size={36} color="#0FA958" />, 
+                                title: 'Electrical Contractor Licence', 
+                                style: { background: 'white', border: '2px solid #0FA958' }
+                            },
+                            { 
+                                icon: <div style={{ fontSize: '1.5rem', fontWeight: 900, color: '#0A1628' }}>ISO</div>, 
+                                title: '9001:2015 IAF Certificate', 
+                                style: { background: 'white', border: '1px solid #E2E8F0' }
+                            },
+                            { 
+                                icon: <Rocket size={36} color="#FF6B00" />, 
+                                title: 'Startup India', 
+                                style: { background: 'white', border: '1px solid #E2E8F0', borderTop: '4px solid #FF6B00' }
+                            },
+                            { 
+                                icon: <Sun size={36} color="#F59E0B" />, 
+                                title: 'MNRE Authorised', 
+                                style: { background: 'white', border: '1px solid #E2E8F0' }
+                            },
+                        ].map((cert, i) => (
+                            <AnimatedCard key={cert.title} delay={i * 0.1}>
+                                <div style={{
+                                    ...cert.style,
+                                    borderRadius: 16, padding: 32, textAlign: 'center',
+                                    display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 16,
+                                    boxShadow: '0 4px 12px rgba(0,0,0,0.05)', height: '100%'
+                                }}>
+                                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: 60 }}>
+                                        {cert.icon}
+                                    </div>
+                                    <h3 style={{ fontSize: '1.1rem', fontWeight: 600 }}>{cert.title}</h3>
+                                </div>
+                            </AnimatedCard>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Our Partners */}
+            <section className="section">
+                <div className="container">
+                    <AnimatedSection>
+                        <div className="section-header">
+                            <div className="section-badge">🤝 Collaboration</div>
+                            <h2 className="section-title">Our Partners</h2>
+                            <p className="section-subtitle">We partner with industry leaders to deliver the best solutions</p>
+                        </div>
+                    </AnimatedSection>
+
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 32 }}>
+                        {[
+                            { category: 'Inverters', brands: ['APS', 'Deye', 'Microtek', 'FOX', 'Solaris', 'SolarEdge', 'T-SUN', 'Hayunhlas'] },
+                            { category: 'Solar Panels', brands: ['APS', 'WAAREE', 'Adani', 'Norstorm', 'Microtek', 'Havells', 'Luminous', 'Premier'] },
+                            { category: 'Batteries', brands: ['EXIDE', 'Microtek', 'AMARON', 'Luminous', 'Deye', 'SOLAIRE'] },
+                            { category: 'Automation & Electrical', brands: ['Havells', 'KEI', 'Polycab', 'V-Guard', 'L&T'] },
+                        ].map((partner, i) => (
+                            <AnimatedCard key={partner.category} delay={i * 0.1}>
+                                <div style={{ background: '#F8FAFC', borderRadius: 16, padding: 24, height: '100%', border: '1px solid #E2E8F0' }}>
+                                    <h3 style={{ fontSize: '1.2rem', marginBottom: 20, color: '#0A1628', borderBottom: '2px solid #0FA958', display: 'inline-block', paddingBottom: 4 }}>
+                                        {partner.category}
+                                    </h3>
+                                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
+                                        {partner.brands.map(brand => (
+                                            <span key={brand} style={{
+                                                background: 'white', padding: '6px 14px', borderRadius: 20,
+                                                fontSize: '0.85rem', fontWeight: 600, color: '#475569',
+                                                border: '1px solid #CBD5E1', boxShadow: '0 2px 4px rgba(0,0,0,0.02)'
+                                            }}>
+                                                {brand}
+                                            </span>
+                                        ))}
+                                    </div>
                                 </div>
                             </AnimatedCard>
                         ))}
@@ -157,7 +346,7 @@ export default function AboutPage() {
             </section>
 
             {/* Leadership */}
-            <section className="section">
+            <section className="section section-grey">
                 <div className="container">
                     <AnimatedSection>
                         <div className="section-header">
@@ -181,39 +370,10 @@ export default function AboutPage() {
                                 <p style={{ color: '#0FA958', fontWeight: 600, marginBottom: 16 }}>Managing Partner</p>
                                 <p style={{ color: '#64748B', fontSize: '0.95rem', lineHeight: 1.6 }}>
                                     Leading GreenVolt Energy with a vision to transform Kerala&apos;s energy landscape
-                                    through sustainable and innovative solar solutions.
+                                    through sustainable and innovative power solutions.
                                 </p>
                             </div>
                         </AnimatedCard>
-                    </div>
-                </div>
-            </section>
-
-            {/* Certifications */}
-            <section className="section section-grey">
-                <div className="container">
-                    <AnimatedSection>
-                        <div className="section-header">
-                            <div className="section-badge">🏅 Trust & Credibility</div>
-                            <h2 className="section-title">Certifications & Partnerships</h2>
-                        </div>
-                    </AnimatedSection>
-
-                    <div className="feature-grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))' }}>
-                        {[
-                            { icon: <Award size={32} />, title: 'MNRE Empanelled', desc: 'Registered with Ministry of New & Renewable Energy (future vendor)' },
-                            { icon: <Shield size={32} />, title: 'KSEB Approved', desc: 'Approved vendor for net metering and grid-connected installations' },
-                            { icon: <CheckCircle2 size={32} />, title: 'ISO Standards', desc: 'Following international quality standards in all installations' },
-                            { icon: <Users size={32} />, title: 'OEM Partners', desc: 'Authorized partner of leading solar panel and inverter manufacturers' },
-                        ].map((cert, i) => (
-                            <AnimatedCard key={cert.title} delay={i * 0.1}>
-                                <div className="why-card">
-                                    <div className="why-icon">{cert.icon}</div>
-                                    <h3 className="why-title">{cert.title}</h3>
-                                    <p className="why-desc">{cert.desc}</p>
-                                </div>
-                            </AnimatedCard>
-                        ))}
                     </div>
                 </div>
             </section>
@@ -223,7 +383,7 @@ export default function AboutPage() {
                 <div className="container">
                     <AnimatedSection>
                         <div className="cta-banner">
-                            <h2 className="cta-title">Join the Solar Revolution</h2>
+                            <h2 className="cta-title">Join the Sustainable Revolution</h2>
                             <p className="cta-subtitle">
                                 Be part of Kerala&apos;s clean energy movement. Let&apos;s power your future together.
                             </p>

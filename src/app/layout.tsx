@@ -24,17 +24,17 @@ const openSans = Open_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "GreenVolt Energy Solutions | Solar Panel Installation Kerala",
-  description: "Kerala's trusted solar energy partner. Expert installation of On-Grid, Off-Grid & Hybrid solar systems for homes and businesses. Government subsidy support, EMI options available. Get your free solar quote today!",
-  keywords: "solar kerala, solar panel installation kerala, on-grid solar kerala, off-grid solar, hybrid solar system, solar subsidy kerala, solar energy solutions, renewable energy kerala, rooftop solar kerala",
-  metadataBase: new URL("https://www.greenvoltes.in"),
+  title: "GreenVolt Energy Solutions | Renewable, Smart & Industrial Power",
+  description: "Kerala's trusted partner for complete energy solutions. Expert installation of Solar Systems, Smart Home Automation, CCTV Security, and Industrial Power Panels.",
+  keywords: "solar kerala, solar panel installation kerala, on-grid solar kerala, hybrid solar system, renewable energy kerala, home automation kerala, industrial power solutions, cctv security, ev charging infrastructure",
+  metadataBase: new URL("https://www.greenvoltenergysolutions.in"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "GreenVolt Energy Solutions | Solar Panel Installation Kerala",
-    description: "Kerala's trusted solar energy partner. Expert installation of On-Grid, Off-Grid & Hybrid solar systems.",
-    url: "https://www.greenvoltes.in",
+    title: "GreenVolt Energy Solutions | Renewable, Smart & Industrial Power",
+    description: "Kerala's trusted partner for complete energy solutions. Expert installation of Solar Systems, Smart Home Automation, CCTV Security, and Industrial Power Panels.",
+    url: "https://www.greenvoltenergysolutions.in",
     siteName: "GreenVolt Energy Solutions",
     type: "website",
   },
@@ -66,9 +66,9 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "LocalBusiness",
               "name": "GreenVolt Energy Solutions LLP",
-              "description": "Kerala's trusted solar energy partner providing On-Grid, Off-Grid & Hybrid solar systems.",
-              "url": "https://greenvoltes.in",
-              "telephone": "+91-XXXXXXXXXX",
+              "description": "Kerala's trusted partner for complete energy solutions including Solar Systems, Smart Automation, and Industrial Power Panels.",
+              "url": "https://greenvoltenergysolutions.in",
+              "telephone": "+91-8714889721",
               "address": {
                 "@type": "PostalAddress",
                 "addressRegion": "Kerala",

@@ -1,115 +1,94 @@
 'use client';
 
-import Image from 'next/image';
+import { useState } from 'react';
 import Link from 'next/link';
 import {
-    Sun, Battery, Cpu, Zap, Home, Building2,
-    ArrowRight, CheckCircle2, ChevronRight
+    Sun, Battery, Zap, Home, Building2,
+    ArrowRight, CheckCircle2, Shield, Activity, Power, Factory,
+    Lightbulb, Cpu, Cable, Plug, Video, Lock, Radio, Car, TrendingUp, GraduationCap, BedDouble, Store, Truck, Landmark, HardHat
 } from 'lucide-react';
 import AnimatedSection, { AnimatedCard } from '@/components/AnimatedSection';
 
-const solarServices = [
+const divisions = [
     {
-        id: 'on-grid',
-        icon: <Sun size={32} />,
-        title: 'On-Grid Solar System',
-        desc: 'Connect your solar panels to the electricity grid and use net metering to earn credits for excess power generated. The most popular and cost-effective solar solution for Kerala homes.',
-        benefits: [
-            'Reduce electricity bill to zero',
-            'Earn from excess power via net metering',
-            'No battery required — lower cost',
-            'Government subsidy of ₹78,000 available',
-            'ROI in 3-5 years',
-        ],
-        idealFor: 'Homes and businesses with reliable grid supply looking to reduce electricity costs.',
-
+        id: 'renewable',
+        title: 'Renewable Energy Solutions',
+        subtitle: 'Sustainable energy solutions designed for today\'s needs and tomorrow\'s future',
+        icon: <Sun size={24} />,
+        features: ['Clean Energy', 'Maximum Savings', 'Reliable & Safe', 'Sustainable Future'],
+        services: [
+            { icon: <Home size={32} />, title: 'Residential Rooftop Solar Systems', desc: 'Custom solar installations for homes, turning rooftops into power generators with grid connectivity.' },
+            { icon: <Building2 size={32} />, title: 'Commercial Rooftop Solar Systems', desc: 'Scalable solar arrays designed to significantly reduce operational costs for businesses.' },
+            { icon: <Factory size={32} />, title: 'Industrial Solar EPC', desc: 'End-to-end solar plant engineering, procurement, and construction for heavy industries.' },
+            { icon: <Sun size={32} />, title: 'On-Grid Solar Systems', desc: 'Grid-tied solutions perfectly balancing immediate savings with net metering benefits.' },
+            { icon: <Battery size={32} />, title: 'Hybrid Solar Systems', desc: 'Combining the best of grid connectivity and reliable battery backup for uninterrupted power.' },
+            { icon: <Settings size={32} />, title: 'Solar Plant Operation & Maintenance', desc: 'Comprehensive monitoring and maintenance to ensure peak solar plant performance year-round.' },
+            { icon: <TrendingUp size={32} />, title: 'Net Metering Assistance', desc: 'Expert handling of all grid connection processes and documentation.' },
+            { icon: <Activity size={32} />, title: 'Energy Audits & Consultancy', desc: 'Detailed analysis of energy consumption to recommend optimized efficiency upgrades.' },
+        ]
     },
     {
-        id: 'off-grid',
-        icon: <Battery size={32} />,
-        title: 'Off-Grid Solar System',
-        desc: 'Complete energy independence from the grid. Battery-based solar systems store energy for use during night and cloudy days. Perfect for remote locations.',
-        benefits: [
-            'Complete energy independence',
-            'Works without grid connection',
-            'Battery stores excess energy',
-            'Ideal for remote areas',
-            'Uninterrupted power supply',
-        ],
-        idealFor: 'Remote locations, areas with frequent power cuts, or those seeking complete grid independence.',
-
+        id: 'smart',
+        title: 'Smart Power & Automation',
+        subtitle: 'Intelligent solutions that enhance efficiency, safety, convenience and control',
+        icon: <Cpu size={24} />,
+        features: ['Enhanced Control and Security', 'Greater Efficiency and Savings', 'Real-Time Insights and Monitoring', 'Seamless Integration and Reliability'],
+        services: [
+            { icon: <Home size={32} />, title: 'Home Automation', desc: 'Smart living solutions for lighting, climate, and security with intuitive app controls.' },
+            { icon: <Building2 size={32} />, title: 'Building Automation', desc: 'Centralized management systems for large facilities to optimize resources.' },
+            { icon: <Video size={32} />, title: 'CCTV Systems', desc: 'High-definition surveillance systems for comprehensive security monitoring.' },
+            { icon: <Lock size={32} />, title: 'Video Door Phones', desc: 'Secure entry management with video verification and remote unlocking.' },
+            { icon: <Shield size={32} />, title: 'Access Control Systems', desc: 'Advanced biometric and card-based entry systems for restricted areas.' },
+            { icon: <Radio size={32} />, title: 'Structured Networking', desc: 'Robust data and communication infrastructure for modern digital demands.' },
+            { icon: <Car size={32} />, title: 'EV Charging Infrastructure', desc: 'Fast and reliable electric vehicle charging stations for homes and commercial spaces.' },
+            { icon: <Battery size={32} />, title: 'Battery Energy Storage Systems (BESS)', desc: 'High-capacity smart storage to capture and deploy energy when needed most.' },
+            { icon: <Activity size={32} />, title: 'Smart Energy Monitoring', desc: 'Real-time tracking of energy usage to identify savings opportunities.' },
+        ]
     },
     {
-        id: 'hybrid',
-        icon: <Cpu size={32} />,
-        title: 'Hybrid Solar System',
-        desc: 'The best of both worlds — combines grid connectivity with battery storage. Enjoy grid-tied benefits while having backup power during outages.',
-        benefits: [
-            'Grid-tied + battery backup',
-            'Power during outages',
-            'Net metering compatible',
-            'Smart energy management',
-            'Maximum energy utilization',
-        ],
-        idealFor: 'Homes and businesses that want both cost savings and power backup security.',
-
-    },
+        id: 'industrial',
+        title: 'Industrial Power Solutions',
+        subtitle: 'Engineered for reliability, efficiency and maximum operational uptime',
+        icon: <Power size={24} />,
+        features: ['Reliable Performance', 'Advanced Engineering', 'Optimized Efficiency', 'Built for Industry'],
+        services: [
+            { icon: <Zap size={32} />, title: 'PCC Panels', desc: 'Robust Power Control Center panels for safe main power distribution.' },
+            { icon: <Activity size={32} />, title: 'MCC Panels', desc: 'Motor Control Center panels for centralized control of industrial motors.' },
+            { icon: <TrendingUp size={32} />, title: 'APFC Panels', desc: 'Automatic Power Factor Correction panels to eliminate penalties and save energy.' },
+            { icon: <Power size={32} />, title: 'AMF Panels', desc: 'Automatic Mains Failure panels for seamless transition to backup generators.' },
+            { icon: <Cable size={32} />, title: 'Synchronizing Panels', desc: 'Intelligent load sharing panels for multiple generator setups.' },
+            { icon: <Settings size={32} />, title: 'VFD Panels', desc: 'Variable Frequency Drive panels for precise motor speed control and energy savings.' },
+            { icon: <Cpu size={32} />, title: 'Control Panels', desc: 'Custom-designed automation control panels for specific industrial processes.' },
+            { icon: <Plug size={32} />, title: 'Distribution Boards', desc: 'High-quality sub-distribution boards for organized power routing.' },
+            { icon: <Factory size={32} />, title: 'Diesel Generator Integration', desc: 'Professional installation and integration of robust backup generators.' },
+            { icon: <Lightbulb size={32} />, title: 'Hybrid Power Systems', desc: 'Integrated Solar + Battery + DG systems for zero downtime.' },
+        ]
+    }
 ];
 
-const energyBackup = [
-    {
-        id: 'battery',
-        icon: <Battery size={32} />,
-        title: 'Battery Systems',
-        desc: 'High-quality lithium-ion and tubular lead-acid batteries for solar energy storage. Reliable, long-lasting, and efficient battery solutions for every need.',
-        benefits: ['Lithium-ion & tubular options', 'Long cycle life', 'Deep discharge capable', 'Smart BMS protection'],
-    },
-    {
-        id: 'ups',
-        icon: <Zap size={32} />,
-        title: 'Home UPS',
-        desc: 'Reliable home UPS systems with pure sine wave output. Protect your appliances and enjoy uninterrupted power during grid failures.',
-        benefits: ['Pure sine wave output', 'Instant switchover', 'LCD display monitoring', 'Overload protection'],
-    },
-];
+// Helper icon component for dynamically rendered lists
+const Settings = ({ size }: { size: number }) => (
+    <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+);
 
-const additionalServices = [
-    {
-        id: 'electricals',
-        icon: <Zap size={32} />,
-        title: 'Electricals & Solar Products',
-        desc: 'Complete range of electrical products and solar-powered lights. From industrial wiring to energy-efficient lighting solutions.',
-        benefits: ['Industrial & Residential Wiring', 'Solar Street Lights', 'LED Lighting Solutions', 'Energy Efficient Products'],
-    },
-    {
-        id: 'cctv',
-        icon: <Building2 size={32} />,
-        title: 'CCTV & Security Systems',
-        desc: 'Advanced security solutions for homes and businesses. High-definition CCTV cameras and integrated security monitoring systems.',
-        benefits: ['HD Monitoring', 'Mobile Remote Access', 'Night Vision Cameras', 'Motion Detection Alerts'],
-    },
-];
-
-const projectTypes = [
-    {
-        id: 'residential',
-        icon: <Home size={32} />,
-        title: 'Residential Solar',
-        desc: 'Custom-designed rooftop solar systems for Indian homes. We handle everything from design to subsidies, making your home a power-generating asset.',
-        benefits: ['Custom roof design', '₹78,000 Government subsidy', 'EMI available', 'Quick installation'],
-        image: '/images/hero-solar.png',
-    },
-    {
-        id: 'commercial',
-        icon: <Building2 size={32} />,
-        title: 'Commercial Solar',
-        desc: 'Large-scale solar solutions for factories, warehouses, offices, and commercial buildings. Reduce operational costs and meet sustainability goals.',
-        benefits: ['Large capacity systems', 'Quick ROI', 'OPEX/CAPEX models', 'Annual maintenance'],
-        image: '/images/commercial-solar.png',
-    },
+const industries = [
+    { icon: <Home size={32} />, title: 'Residential Developments' },
+    { icon: <Building2 size={32} />, title: 'Commercial Buildings' },
+    { icon: <Factory size={32} />, title: 'Industrial Facilities' },
+    { icon: <Activity size={32} />, title: 'Hospitals' },
+    { icon: <GraduationCap size={32} />, title: 'Educational Institutions' },
+    { icon: <BedDouble size={32} />, title: 'Hotels & Hospitality' },
+    { icon: <Store size={32} />, title: 'Retail Spaces' },
+    { icon: <Truck size={32} />, title: 'Warehouses' },
+    { icon: <Landmark size={32} />, title: 'Government Projects' },
+    { icon: <HardHat size={32} />, title: 'Infrastructure Developments' },
 ];
 
 export default function ServicesPage() {
+    const [activeTab, setActiveTab] = useState(divisions[0].id);
+
+    const currentDivision = divisions.find(d => d.id === activeTab) || divisions[0];
+
     return (
         <>
             {/* Page Header */}
@@ -117,100 +96,86 @@ export default function ServicesPage() {
                 <div className="page-header-content">
                     <AnimatedSection>
                         <h1>Our Services</h1>
-                        <p>Complete solar & energy solutions for homes and businesses across Kerala</p>
+                        <p>Complete energy, automation, and industrial solutions across Kerala</p>
                     </AnimatedSection>
                 </div>
             </div>
 
-            {/* Solar Solutions */}
-            <section className="section">
+            {/* Division Tabs */}
+            <section className="section" style={{ paddingTop: 40, paddingBottom: 0 }}>
                 <div className="container">
-                    <AnimatedSection>
-                        <div className="section-header">
-                            <div className="section-badge">☀️ Solar Solutions</div>
-                            <h2 className="section-title">Solar Power Systems</h2>
-                            <p className="section-subtitle">Choose the right solar system for your needs</p>
-                        </div>
-                    </AnimatedSection>
-
-                    {solarServices.map((service, idx) => (
-                        <div
-                            key={service.id}
-                            id={service.id}
-                            className={`solar-detail-section ${idx % 2 !== 0 ? 'reverse' : ''}`}
-                        >
-                            <AnimatedSection delay={0.1}>
-                                <div>
-                                    <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 16 }}>
-                                        <div style={{
-                                            width: 56, height: 56, borderRadius: 14,
-                                            background: 'linear-gradient(135deg, rgba(15,169,88,0.1), rgba(15,169,88,0.05))',
-                                            display: 'flex', alignItems: 'center', justifyContent: 'center',
-                                            color: '#0FA958'
-                                        }}>
-                                            {service.icon}
-                                        </div>
-                                        <h3 style={{ fontSize: '1.75rem' }}>{service.title}</h3>
-                                    </div>
-                                    <p style={{ color: '#475569', lineHeight: 1.8, marginBottom: 24, fontSize: '1rem' }}>
-                                        {service.desc}
-                                    </p>
-                                    <ul className="benefit-list">
-                                        {service.benefits.map((b) => (
-                                            <li key={b}>
-                                                <CheckCircle2 size={18} />
-                                                {b}
-                                            </li>
-                                        ))}
-                                    </ul>
-                                    <div style={{
-                                        background: 'rgba(15,169,88,0.06)', borderRadius: 12, padding: '16px 20px',
-                                        marginTop: 20, border: '1px solid rgba(15,169,88,0.12)'
-                                    }}>
-                                        <strong style={{ color: '#0FA958', fontSize: '0.85rem' }}>IDEAL FOR:</strong>
-                                        <p style={{ color: '#475569', fontSize: '0.9rem', marginTop: 4 }}>{service.idealFor}</p>
-                                    </div>
-                                    <Link href="/solar-systems" style={{
-                                        display: 'inline-flex', alignItems: 'center', gap: 6,
-                                        marginTop: 20, color: '#0FA958', fontWeight: 600, textDecoration: 'none'
-                                    }}>
-                                        Learn More <ChevronRight size={16} />
-                                    </Link>
-                                </div>
-                            </AnimatedSection>
-
-
-                        </div>
-                    ))}
+                    <div style={{
+                        display: 'flex', 
+                        flexWrap: 'wrap',
+                        gap: 12, 
+                        justifyContent: 'center',
+                        marginBottom: 40
+                    }}>
+                        {divisions.map((division) => (
+                            <button
+                                key={division.id}
+                                onClick={() => setActiveTab(division.id)}
+                                style={{
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    gap: 8,
+                                    padding: '16px 24px',
+                                    borderRadius: 30,
+                                    border: 'none',
+                                    cursor: 'pointer',
+                                    fontWeight: 600,
+                                    fontSize: '1.05rem',
+                                    transition: 'all 0.3s ease',
+                                    backgroundColor: activeTab === division.id ? '#0FA958' : 'rgba(15,169,88,0.05)',
+                                    color: activeTab === division.id ? '#fff' : '#0F172A',
+                                    boxShadow: activeTab === division.id ? '0 10px 20px rgba(15,169,88,0.2)' : 'none',
+                                }}
+                            >
+                                {division.icon}
+                                {division.title}
+                            </button>
+                        ))}
+                    </div>
                 </div>
             </section>
 
-            {/* Energy Backup */}
-            <section className="section section-grey" id="battery">
+            {/* Active Division Content */}
+            <section className="section section-grey">
                 <div className="container">
-                    <AnimatedSection>
-                        <div className="section-header">
-                            <div className="section-badge">🔋 Energy Backup</div>
-                            <h2 className="section-title">Battery & UPS Solutions</h2>
-                            <p className="section-subtitle">Reliable energy backup for uninterrupted power</p>
+                    <AnimatedSection key={currentDivision.id}>
+                        <div className="section-header" style={{ marginBottom: 40 }}>
+                            <div className="section-badge" style={{ display: 'inline-flex', alignItems: 'center', gap: 6 }}>
+                                {currentDivision.icon}
+                                {currentDivision.title}
+                            </div>
+                            <h2 className="section-title" style={{ marginTop: 16 }}>{currentDivision.title}</h2>
+                            <p className="section-subtitle">{currentDivision.subtitle}</p>
+                            
+                            <div style={{
+                                display: 'flex', flexWrap: 'wrap', gap: 16, justifyContent: 'center', marginTop: 32
+                            }}>
+                                {currentDivision.features.map((feature, i) => (
+                                    <div key={i} style={{
+                                        display: 'flex', alignItems: 'center', gap: 8,
+                                        background: '#fff', padding: '10px 20px', borderRadius: 20,
+                                        boxShadow: '0 4px 12px rgba(0,0,0,0.03)',
+                                        color: '#0C8A46', fontWeight: 500
+                                    }}>
+                                        <CheckCircle2 size={18} />
+                                        {feature}
+                                    </div>
+                                ))}
+                            </div>
                         </div>
                     </AnimatedSection>
 
-                    <div className="feature-grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))' }}>
-                        {energyBackup.map((item, i) => (
-                            <AnimatedCard key={item.id} delay={i * 0.15}>
-                                <div className="service-card" id={item.id}>
-                                    <div className="service-card-icon">{item.icon}</div>
-                                    <h3 className="service-card-title" style={{ fontSize: '1.5rem' }}>{item.title}</h3>
-                                    <p className="service-card-desc" style={{ marginBottom: 20 }}>{item.desc}</p>
-                                    <ul className="benefit-list">
-                                        {item.benefits.map((b) => (
-                                            <li key={b}>
-                                                <CheckCircle2 size={16} />
-                                                {b}
-                                            </li>
-                                        ))}
-                                    </ul>
+                    <div className="feature-grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))' }}>
+                        {currentDivision.services.map((service, i) => (
+                            <AnimatedCard key={i} delay={i * 0.05}>
+                                <div className="service-card" style={{ height: '100%' }}>
+                                    <div className="service-card-icon">{service.icon}</div>
+                                    <h3 className="service-card-title" style={{ fontSize: '1.25rem' }}>{service.title}</h3>
+                                    <p className="service-card-desc">{service.desc}</p>
                                 </div>
                             </AnimatedCard>
                         ))}
@@ -218,109 +183,94 @@ export default function ServicesPage() {
                 </div>
             </section>
 
-            {/* Additional Services */}
-            <section className="section" id="additional">
-                <div className="container">
-                    <AnimatedSection>
-                        <div className="section-header">
-                            <div className="section-badge">⚡ Beyond Solar</div>
-                            <h2 className="section-title">Additional Services</h2>
-                            <p className="section-subtitle">Complete electrical and security solutions</p>
-                        </div>
-                    </AnimatedSection>
-                    <div className="feature-grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))' }}>
-                        {additionalServices.map((item, i) => (
-                            <AnimatedCard key={item.id} delay={i * 0.15}>
-                                <div className="service-card" id={item.id} style={{ height: '100%' }}>
-                                    <div className="service-card-icon">{item.icon}</div>
-                                    <h3 className="service-card-title" style={{ fontSize: '1.5rem' }}>{item.title}</h3>
-                                    <p className="service-card-desc" style={{ marginBottom: 20 }}>{item.desc}</p>
-                                    <ul className="benefit-list">
-                                        {item.benefits.map((b) => (
-                                            <li key={b}>
-                                                <CheckCircle2 size={16} />
-                                                {b}
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-                            </AnimatedCard>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* Project Types */}
+            {/* Industries We Serve */}
             <section className="section">
                 <div className="container">
                     <AnimatedSection>
                         <div className="section-header">
-                            <div className="section-badge">🏠 Project Types</div>
-                            <h2 className="section-title">Residential & Commercial</h2>
-                            <p className="section-subtitle">Solar solutions designed for every scale</p>
+                            <div className="section-badge">🏢 Sectors</div>
+                            <h2 className="section-title">Industries We Serve</h2>
+                            <p className="section-subtitle">Trusted by diverse sectors for reliable and sustainable impact</p>
                         </div>
                     </AnimatedSection>
-
-                    {projectTypes.map((project, idx) => (
-                        <div
-                            key={project.id}
-                            id={project.id}
-                            className={`solar-detail-section ${idx % 2 !== 0 ? 'reverse' : ''}`}
-                        >
-                            <AnimatedSection delay={0.1}>
-                                <div>
-                                    <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 16 }}>
-                                        <div style={{
-                                            width: 56, height: 56, borderRadius: 14,
-                                            background: 'linear-gradient(135deg, rgba(15,169,88,0.1), rgba(15,169,88,0.05))',
-                                            display: 'flex', alignItems: 'center', justifyContent: 'center',
-                                            color: '#0FA958'
-                                        }}>
-                                            {project.icon}
-                                        </div>
-                                        <h3 style={{ fontSize: '1.75rem' }}>{project.title}</h3>
+                    
+                    <div style={{
+                        display: 'grid',
+                        gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+                        gap: 24,
+                        marginBottom: 40
+                    }}>
+                        {industries.map((industry, i) => (
+                            <AnimatedCard key={i} delay={i * 0.05}>
+                                <div style={{
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    alignItems: 'center',
+                                    textAlign: 'center',
+                                    padding: '30px 20px',
+                                    background: 'rgba(15,169,88,0.03)',
+                                    borderRadius: 24,
+                                    border: '1px solid rgba(15,169,88,0.1)',
+                                    transition: 'all 0.3s ease',
+                                    cursor: 'default',
+                                }} className="industry-card">
+                                    <div style={{ color: '#0FA958', marginBottom: 16 }}>
+                                        {industry.icon}
                                     </div>
-                                    <p style={{ color: '#475569', lineHeight: 1.8, marginBottom: 24 }}>{project.desc}</p>
-                                    <ul className="benefit-list">
-                                        {project.benefits.map((b) => (
-                                            <li key={b}>
-                                                <CheckCircle2 size={18} />
-                                                {b}
-                                            </li>
-                                        ))}
-                                    </ul>
-                                    <Link href="/contact" className="btn-primary" style={{ marginTop: 24 }}>
-                                        Get Quote <ArrowRight size={18} />
-                                    </Link>
+                                    <h4 style={{ color: '#0F172A', fontWeight: 600, fontSize: '1.1rem' }}>
+                                        {industry.title}
+                                    </h4>
                                 </div>
-                            </AnimatedSection>
+                            </AnimatedCard>
+                        ))}
+                    </div>
 
-                            <AnimatedSection delay={0.3}>
-                                <div style={{ borderRadius: 20, overflow: 'hidden', position: 'relative', height: 400 }}>
-                                    <Image src={project.image} alt={project.title} fill style={{ objectFit: 'cover', borderRadius: 20 }} />
-                                </div>
-                            </AnimatedSection>
-                        </div>
-                    ))}
+                    <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 24, marginTop: 40 }}>
+                        {['Solution Focused', 'Trusted by Diverse Sectors', 'Scalable & Reliable', 'Sustainable Impact'].map((highlight, i) => (
+                            <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 8, color: '#475569', fontWeight: 500 }}>
+                                <div style={{ width: 8, height: 8, borderRadius: '50%', backgroundColor: '#0FA958' }}></div>
+                                {highlight}
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </section>
 
             {/* CTA */}
-            <section className="section">
-                <div className="container">
+            <section className="section" style={{ backgroundColor: '#0A1628', color: '#fff', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
+                <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', opacity: 0.1, background: 'radial-gradient(circle at center, #12D96E 0%, transparent 60%)' }}></div>
+                <div className="container" style={{ position: 'relative', zIndex: 1, padding: '60px 0' }}>
                     <AnimatedSection>
-                        <div className="cta-banner">
-                            <h2 className="cta-title">Ready to Go Solar?</h2>
-                            <p className="cta-subtitle">
-                                Get a free consultation and customized solar solution for your home or business.
-                            </p>
-                            <Link href="/contact" className="btn-dark" style={{ position: 'relative', zIndex: 1 }}>
-                                Get Free Consultation <ArrowRight size={18} />
-                            </Link>
-                        </div>
+                        <h2 style={{ fontSize: '3rem', fontWeight: 700, marginBottom: 20 }}>Ready to Power Your Future?</h2>
+                        <p style={{ fontSize: '1.25rem', color: '#CBD5E1', marginBottom: 40, maxWidth: 600, margin: '0 auto 40px' }}>
+                            Join hands with GreenVolt for sustainable, intelligent, and reliable energy solutions tailored just for you.
+                        </p>
+                        <Link href="/contact" style={{
+                            display: 'inline-flex', alignItems: 'center', gap: 10,
+                            padding: '18px 40px', backgroundColor: '#0FA958', color: '#fff',
+                            borderRadius: 30, fontWeight: 600, fontSize: '1.1rem',
+                            textDecoration: 'none', transition: 'all 0.3s ease',
+                            boxShadow: '0 10px 25px rgba(15,169,88,0.3)'
+                        }} className="cta-hover-btn">
+                            Get Free Quote <ArrowRight size={20} />
+                        </Link>
                     </AnimatedSection>
                 </div>
             </section>
+            
+            <style dangerouslySetInnerHTML={{__html: `
+                .industry-card:hover {
+                    transform: translateY(-5px);
+                    background: #fff !important;
+                    box-shadow: 0 15px 30px rgba(0,0,0,0.06) !important;
+                    border-color: #0FA958 !important;
+                }
+                .cta-hover-btn:hover {
+                    transform: translateY(-3px);
+                    background: #12D96E !important;
+                    box-shadow: 0 15px 35px rgba(15,169,88,0.4) !important;
+                }
+            `}} />
         </>
     );
 }
