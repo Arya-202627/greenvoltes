@@ -13,7 +13,7 @@ import {
   ClipboardCheck, Palette, Wrench, Headphones,
   ChevronRight, Sparkles, Factory, Heart,
   GraduationCap, Hotel, ShoppingBag, Warehouse,
-  Landmark, HardHat
+  Landmark, HardHat, ShieldCheck, Rocket
 } from 'lucide-react';
 import AnimatedSection from '@/components/AnimatedSection';
 import QuoteModal from '@/components/QuoteModal';
@@ -293,27 +293,60 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ===== WHY CHOOSE US - LUXURY FEEL ===== */}
-      <section className="section section-dark reveal-section" style={{ background: 'var(--secondary)' }}>
+      {/* ===== CERTIFICATIONS (Replaced Why GreenVolt Elite) ===== */}
+      <section className="section bg-white reveal-section" style={{ padding: '80px 0' }}>
         <div className="container">
-          <div className="section-header">
-            <div className="section-badge">💎 Premium Standards</div>
-            <h2 className="section-title text-white">Why GreenVolt Elite?</h2>
+          <div style={{ marginBottom: '40px' }}>
+            <h2 style={{ fontSize: '2.5rem', fontWeight: 800, textTransform: 'uppercase', lineHeight: 1.1 }}>
+              <span style={{ color: '#003366' }}>OUR</span><br />
+              <span style={{ color: '#10B981' }}>CERTIFICATIONS</span>
+            </h2>
+            <div style={{ width: '40px', height: '4px', background: '#003366', marginTop: '16px', marginBottom: '24px' }}></div>
+            <p style={{ color: '#475569', maxWidth: '400px', fontSize: '0.95rem', lineHeight: 1.6 }}>
+              Recognized credentials that reflect our commitment to quality, compliance and excellence.
+            </p>
           </div>
 
-          <div className="feature-grid">
+          <div className="feature-grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '20px' }}>
             {[
-              { icon: <Award size={32} />, title: 'Complete Turnkey Solutions', desc: 'End-to-end services from design to commissioning and beyond' },
-              { icon: <Shield size={32} />, title: 'Licensed Electrical Expertise', desc: 'Grade A Licensed Electrical Contractor with full compliance' },
-              { icon: <Users size={32} />, title: 'MNRE Empanelled Vendor', desc: 'Authorized to offer MNRE compliant grid-interactive and standalone energy solutions' },
-              { icon: <TrendingUp size={32} />, title: 'Reliable After-Sales Service', desc: 'Prompt assistance and technical support for continued performance' },
-            ].map((item, i) => (
-              <div key={item.title} className="glass-card">
-                <div className="why-icon" style={{ background: 'rgba(15,169,88,0.1)' }}>{item.icon}</div>
-                <h3 className="text-white mb-2 font-bold">{item.title}</h3>
-                <p className="text-gray-400 text-sm leading-relaxed">{item.desc}</p>
-              </div>
+                { 
+                    icon: <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: 72, height: 72, borderRadius: '50%', border: '2px solid #10B981', background: 'rgba(16, 185, 129, 0.1)' }}><ShieldCheck size={32} color="#10B981" /></div>, 
+                    title: 'ELECTRICAL CONTRACTOR LICENCE', 
+                },
+                { 
+                    icon: <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: 72, height: 72, borderRadius: '50%', border: '2px solid #004B8D', background: 'rgba(0, 75, 141, 0.1)' }}><div style={{ fontSize: '1.2rem', fontWeight: 900, color: '#004B8D' }}>ISO</div></div>, 
+                    title: 'ISO 9001:2015 IAF CERTIFICATE', 
+                },
+                { 
+                    icon: <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: 72, height: 72, borderRadius: '50%', border: '2px solid #F97316', background: 'rgba(249, 115, 22, 0.1)' }}><Rocket size={32} color="#F97316" /></div>, 
+                    title: 'STARTUP INDIA', 
+                },
+                { 
+                    icon: <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: 72, height: 72, borderRadius: '50%', border: '2px solid #003366', background: 'rgba(0, 51, 102, 0.1)' }}><Sun size={32} color="#003366" /></div>, 
+                    title: 'MNRE AUTHORISED', 
+                },
+            ].map((cert, i) => (
+              <motion.div key={cert.title} whileHover={{ y: -5 }} style={{
+                  background: '#ffffff', border: '1px solid #E2E8F0',
+                  borderRadius: 12, padding: '32px 20px', textAlign: 'center',
+                  display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 20,
+                  boxShadow: '0 4px 12px rgba(0,0,0,0.03)', height: '100%',
+                  position: 'relative', overflow: 'hidden'
+              }}>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: 60 }}>
+                    {cert.icon}
+                </div>
+                <div style={{ width: '1px', height: '24px', background: '#E2E8F0', margin: '8px 0' }}></div>
+                <h3 style={{ fontSize: '0.9rem', fontWeight: 700, color: '#003366', letterSpacing: '0.02em', lineHeight: 1.4 }}>
+                  {cert.title.split(' ').map((word, index) => <span key={index}>{word}<br/></span>)}
+                </h3>
+              </motion.div>
             ))}
+          </div>
+          
+          <div style={{ height: '8px', width: '100%', display: 'flex', marginTop: '60px' }}>
+             <div style={{ width: '30%', background: '#003366' }}></div>
+             <div style={{ width: '70%', background: '#10B981' }}></div>
           </div>
         </div>
       </section>
