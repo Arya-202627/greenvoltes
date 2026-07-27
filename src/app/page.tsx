@@ -314,15 +314,15 @@ export default function HomePage() {
                     title: 'ELECTRICAL CONTRACTOR LICENCE', 
                 },
                 { 
-                    icon: '/images/certs/iso.png', 
+                    icon: '/images/certs/iso-logo.png', 
                     title: 'ISO 9001:2015 IAF CERTIFICATE', 
                 },
                 { 
-                    icon: '/images/certs/startup-india.png', 
+                    icon: '/images/certs/startup-logo.png', 
                     title: 'STARTUP INDIA', 
                 },
                 { 
-                    icon: '/images/certs/emblem.png', 
+                    icon: '/images/certs/mnre-emblem.png', 
                     title: 'MNRE AUTHORISED', 
                 },
             ].map((cert, i) => (
