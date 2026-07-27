@@ -310,19 +310,19 @@ export default function HomePage() {
           <div className="feature-grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '20px' }}>
             {[
                 { 
-                    icon: <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: 72, height: 72, borderRadius: '50%', border: '2px solid #10B981', background: 'rgba(16, 185, 129, 0.1)' }}><ShieldCheck size={32} color="#10B981" /></div>, 
+                    icon: '/images/certs/seal.png', 
                     title: 'ELECTRICAL CONTRACTOR LICENCE', 
                 },
                 { 
-                    icon: <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: 72, height: 72, borderRadius: '50%', border: '2px solid #004B8D', background: 'rgba(0, 75, 141, 0.1)' }}><div style={{ fontSize: '1.2rem', fontWeight: 900, color: '#004B8D' }}>ISO</div></div>, 
+                    icon: '/images/certs/iso.png', 
                     title: 'ISO 9001:2015 IAF CERTIFICATE', 
                 },
                 { 
-                    icon: <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: 72, height: 72, borderRadius: '50%', border: '2px solid #F97316', background: 'rgba(249, 115, 22, 0.1)' }}><Rocket size={32} color="#F97316" /></div>, 
+                    icon: '/images/certs/startup-india.png', 
                     title: 'STARTUP INDIA', 
                 },
                 { 
-                    icon: <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: 72, height: 72, borderRadius: '50%', border: '2px solid #003366', background: 'rgba(0, 51, 102, 0.1)' }}><Sun size={32} color="#003366" /></div>, 
+                    icon: '/images/certs/emblem.png', 
                     title: 'MNRE AUTHORISED', 
                 },
             ].map((cert, i) => (
@@ -333,10 +333,10 @@ export default function HomePage() {
                   boxShadow: '0 4px 12px rgba(0,0,0,0.03)', height: '100%',
                   position: 'relative', overflow: 'hidden'
               }}>
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: 60 }}>
-                    {cert.icon}
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: 80, position: 'relative', width: '100%' }}>
+                    <Image src={cert.icon} alt={cert.title} fill style={{ objectFit: 'contain' }} unoptimized />
                 </div>
-                <div style={{ width: '1px', height: '24px', background: '#E2E8F0', margin: '8px 0' }}></div>
+                <div style={{ width: '1px', height: '24px', background: '#E2E8F0', margin: '4px 0' }}></div>
                 <h3 style={{ fontSize: '0.9rem', fontWeight: 700, color: '#003366', letterSpacing: '0.02em', lineHeight: 1.4 }}>
                   {cert.title.split(' ').map((word, index) => <span key={index}>{word}<br/></span>)}
                 </h3>
