@@ -83,7 +83,7 @@ h6 {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(10, 22, 40, 0.85) 0%, rgba(10, 22, 40, 0.6) 50%, rgba(15, 169, 88, 0.2) 100%);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(240, 249, 255, 0.9) 50%, rgba(220, 252, 231, 0.8) 100%);
   z-index: 1;
 }
 
@@ -119,7 +119,7 @@ h6 {
 
 .hero-title {
   font-size: clamp(2.5rem, 5vw, 4.5rem);
-  color: white;
+  color: var(--secondary);
   max-width: 800px;
   margin-bottom: 20px;
   line-height: 1.1;
@@ -134,7 +134,7 @@ h6 {
 
 .hero-subtitle {
   font-size: clamp(1rem, 2vw, 1.25rem);
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--text-secondary);
   max-width: 600px;
   margin-bottom: 40px;
   line-height: 1.7;
@@ -162,7 +162,7 @@ h6 {
   font-family: 'Poppins', sans-serif;
   font-size: 2.5rem;
   font-weight: 800;
-  color: white;
+  color: var(--secondary);
   line-height: 1;
 }
 
@@ -171,7 +171,7 @@ h6 {
 }
 
 .hero-stat-label {
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--text-secondary);
   font-size: 0.875rem;
   margin-top: 4px;
 }
@@ -205,9 +205,9 @@ h6 {
   align-items: center;
   gap: 8px;
   padding: 16px 32px;
-  background: rgba(255, 255, 255, 0.1);
-  color: white;
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: white;
+  color: var(--secondary);
+  border: 1px solid var(--grey-mid);
   border-radius: 12px;
   font-size: 1rem;
   font-weight: 600;
@@ -215,12 +215,12 @@ h6 {
   transition: all 0.3s ease;
   text-decoration: none;
   font-family: 'Poppins', sans-serif;
-  backdrop-filter: blur(10px);
 }
 
 .btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: var(--grey-light);
   transform: translateY(-2px);
+  border-color: var(--secondary);
 }
 
 .btn-outline {
@@ -868,31 +868,36 @@ h6 {
 
 /* ===== Footer ===== */
 .footer {
-  background: var(--secondary);
-  color: white;
-  padding: 80px 24px 24px;
+  background: #ffffff;
+  color: var(--text-secondary);
+  padding: 80px 5% 40px;
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid var(--grey-mid);
 }
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1.5fr;
-  gap: 48px;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 60px;
   max-width: 1280px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
 .footer-brand-desc {
-  color: rgba(255, 255, 255, 0.6);
-  line-height: 1.7;
-  margin-top: 16px;
-  font-size: 0.9rem;
+  margin-top: 24px;
+  line-height: 1.8;
+  font-size: 0.95rem;
+  max-width: 320px;
+  color: var(--text-secondary);
 }
 
 .footer-heading {
-  font-size: 1rem;
-  font-weight: 700;
-  margin-bottom: 20px;
-  color: white;
+  font-size: 1.125rem;
+  margin-bottom: 24px;
+  color: var(--secondary);
 }
 
 .footer-links {

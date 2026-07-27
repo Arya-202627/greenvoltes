@@ -266,37 +266,33 @@ export default function AboutPage() {
                     <div className="feature-grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))' }}>
                         {[
                             { 
-                                icon: <ShieldCheck size={36} color="#0FA958" />, 
-                                title: 'Electrical Contractor Licence', 
-                                style: { background: 'white', border: '2px solid #0FA958' }
+                                icon: <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: 72, height: 72, borderRadius: '50%', border: '2px solid #10B981', background: 'rgba(16, 185, 129, 0.1)' }}><ShieldCheck size={32} color="#10B981" /></div>, 
+                                title: 'ELECTRICAL CONTRACTOR LICENCE', 
                             },
                             { 
-                                icon: <div style={{ fontSize: '1.5rem', fontWeight: 900, color: '#0A1628' }}>ISO</div>, 
-                                title: '9001:2015 IAF Certificate', 
-                                style: { background: 'white', border: '1px solid #E2E8F0' }
+                                icon: <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: 72, height: 72, borderRadius: '50%', border: '2px solid #004B8D', background: 'rgba(0, 75, 141, 0.1)' }}><div style={{ fontSize: '1.2rem', fontWeight: 900, color: '#004B8D' }}>ISO</div></div>, 
+                                title: 'ISO 9001:2015 IAF CERTIFICATE', 
                             },
                             { 
-                                icon: <Rocket size={36} color="#FF6B00" />, 
-                                title: 'Startup India', 
-                                style: { background: 'white', border: '1px solid #E2E8F0', borderTop: '4px solid #FF6B00' }
+                                icon: <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: 72, height: 72, borderRadius: '50%', border: '2px solid #F97316', background: 'rgba(249, 115, 22, 0.1)' }}><Rocket size={32} color="#F97316" /></div>, 
+                                title: 'STARTUP INDIA', 
                             },
                             { 
-                                icon: <Sun size={36} color="#F59E0B" />, 
-                                title: 'MNRE Authorised', 
-                                style: { background: 'white', border: '1px solid #E2E8F0' }
+                                icon: <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: 72, height: 72, borderRadius: '50%', border: '2px solid #003366', background: 'rgba(0, 51, 102, 0.1)' }}><Sun size={32} color="#003366" /></div>, 
+                                title: 'MNRE AUTHORISED', 
                             },
                         ].map((cert, i) => (
                             <AnimatedCard key={cert.title} delay={i * 0.1}>
                                 <div style={{
-                                    ...cert.style,
-                                    borderRadius: 16, padding: 32, textAlign: 'center',
-                                    display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 16,
-                                    boxShadow: '0 4px 12px rgba(0,0,0,0.05)', height: '100%'
+                                    background: '#ffffff', border: '1px solid #E2E8F0', borderBottom: '3px solid #10B981',
+                                    borderRadius: 12, padding: 32, textAlign: 'center',
+                                    display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 20,
+                                    boxShadow: '0 4px 12px rgba(0,0,0,0.03)', height: '100%'
                                 }}>
                                     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: 60 }}>
                                         {cert.icon}
                                     </div>
-                                    <h3 style={{ fontSize: '1.1rem', fontWeight: 600 }}>{cert.title}</h3>
+                                    <h3 style={{ fontSize: '1rem', fontWeight: 700, color: '#003366', letterSpacing: '0.05em' }}>{cert.title}</h3>
                                 </div>
                             </AnimatedCard>
                         ))}

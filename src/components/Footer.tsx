@@ -57,14 +57,14 @@ export default function Footer() {
                         <div className="footer-contact-item">
                             <Phone size={18} />
                             <div>
-                                <div style={{ fontWeight: 600, color: 'white' }}>Call Us:</div>
+                                <div style={{ fontWeight: 600, color: 'var(--secondary)' }}>Call Us:</div>
                                 <div>+91 8714889721</div>
                             </div>
                         </div>
                         <div className="footer-contact-item">
                             <Mail size={18} />
                             <div>
-                                <div style={{ fontWeight: 600, color: 'white', marginBottom: 4 }}>Email Us:</div>
+                                <div style={{ fontWeight: 600, color: 'var(--secondary)', marginBottom: 4 }}>Email Us:</div>
                                 <div style={{ marginBottom: 2 }}><span style={{ color: '#0FA958' }}>Sales:</span> sales@greenvoltes.in</div>
                                 <div style={{ marginBottom: 2 }}><span style={{ color: '#0FA958' }}>Support:</span> support@greenvoltes.in</div>
                                 <div><span style={{ color: '#0FA958' }}>General:</span> info@greenvoltes.in</div>
@@ -73,7 +73,7 @@ export default function Footer() {
                         <div className="footer-contact-item">
                             <MapPin size={18} />
                             <div>
-                                <div style={{ fontWeight: 600, color: 'white' }}>Visit Us:</div>
+                                <div style={{ fontWeight: 600, color: 'var(--secondary)' }}>Visit Us:</div>
                                 <div>66/1150, Suite No. A6</div>
                                 <div>Kalabhavan Road, Kaloor</div>
                                 <div>Ernakulam - 682018, Kerala</div>
