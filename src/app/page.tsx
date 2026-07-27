@@ -94,7 +94,7 @@ export default function HomePage() {
       >
         <motion.div className="hero-bg" style={{ y: yBg }}>
           <Image
-            src="/images/hero-solar.png"
+            src="/images/hero-solar.jpg"
             alt="Solar panels on Kerala rooftop"
             fill
             style={{ objectFit: 'cover' }}

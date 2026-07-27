@@ -909,14 +909,14 @@ h6 {
 }
 
 .footer-links a {
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--text-secondary);
   text-decoration: none;
   font-size: 0.9rem;
   transition: color 0.3s ease;
 }
 
 .footer-links a:hover {
-  color: var(--primary-light);
+  color: var(--primary);
 }
 
 .footer-contact-item {
@@ -924,7 +924,7 @@ h6 {
   align-items: flex-start;
   gap: 12px;
   margin-bottom: 16px;
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--text-secondary);
   font-size: 0.9rem;
 }
 
