@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import {
     Target, Eye, Heart, Shield, Users, Award,
     ArrowRight, CheckCircle2, Leaf, Lightbulb, Handshake,
