@@ -402,13 +402,13 @@ export default function HomePage() {
                     Apply & Upload Resume <ArrowRight size={18} />
                   </Link>
                   <a
-                    href="https://wa.me/918129920094?text=Hi%20GreenVolt,%20I%20am%20interested%20in%20applying%20for%20the%20Solar%20Sales%20Executive%20role."
+                    href="https://wa.me/918714889721?text=Hi%20GreenVolt,%20I%20am%20interested%20in%20applying%20for%20the%20Solar%20Sales%20Executive%20role."
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn-secondary"
                     style={{ background: 'rgba(255, 255, 255, 0.1)', color: 'white', borderColor: 'rgba(255, 255, 255, 0.3)', display: 'inline-flex', alignItems: 'center', gap: 8, textDecoration: 'none' }}
                   >
-                    <Phone size={16} /> WhatsApp: 8129920094
+                    <Phone size={16} /> WhatsApp: 8714889721
                   </a>
                 </div>
               </div>

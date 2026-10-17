@@ -118,7 +118,7 @@ export default function CareersPage() {
             `_I am attaching my resume file below. Looking forward to your response!_`;
 
         // Direct WhatsApp launch
-        const whatsappUrl = `https://wa.me/918129920094?text=${waText}`;
+        const whatsappUrl = `https://wa.me/918714889721?text=${waText}`;
         window.open(whatsappUrl, '_blank');
 
         setSubmitted(true);
@@ -349,7 +349,7 @@ export default function CareersPage() {
 
                             <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
                                 <a
-                                    href="https://wa.me/918129920094?text=Hi%20GreenVolt,%20I%20am%20interested%20in%20applying%20for%20the%20Solar%20Sales%20Executive%20role."
+                                    href="https://wa.me/918714889721?text=Hi%20GreenVolt,%20I%20am%20interested%20in%20applying%20for%20the%20Solar%20Sales%20Executive%20role."
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     style={{
@@ -358,7 +358,7 @@ export default function CareersPage() {
                                         borderRadius: 10, fontWeight: 600, fontSize: '0.9rem', textDecoration: 'none'
                                     }}
                                 >
-                                    <Phone size={16} /> WhatsApp: 8129920094
+                                    <Phone size={16} /> WhatsApp: 8714889721
                                 </a>
 
                                 <a
@@ -415,13 +415,13 @@ export default function CareersPage() {
 
                                 <div style={{ display: 'flex', flexDirection: 'column', gap: 14, maxWidth: '420px', margin: '0 auto' }}>
                                     <a
-                                        href={`https://wa.me/918129920094?text=${encodeURIComponent(`Hi GreenVolt HR! I am ${fullName}. I have applied for the Solar Sales Executive position and am sending my resume file.`)}`}
+                                        href={`https://wa.me/918714889721?text=${encodeURIComponent(`Hi GreenVolt HR! I am ${fullName}. I have applied for the Solar Sales Executive position and am sending my resume file.`)}`}
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="btn-primary"
                                         style={{ background: '#25D366', borderColor: '#25D366', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 10, textDecoration: 'none' }}
                                     >
-                                        <Phone size={18} /> Send Resume on WhatsApp (8129920094)
+                                        <Phone size={18} /> Send Resume on WhatsApp (8714889721)
                                     </a>
 
                                     <button
