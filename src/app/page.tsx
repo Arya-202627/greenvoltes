@@ -13,7 +13,8 @@ import {
   ClipboardCheck, Palette, Wrench, Headphones,
   ChevronRight, Sparkles, Factory, Heart,
   GraduationCap, Hotel, ShoppingBag, Warehouse,
-  Landmark, HardHat, ShieldCheck, Rocket
+  Landmark, HardHat, ShieldCheck, Rocket,
+  Briefcase, CheckCircle2
 } from 'lucide-react';
 import AnimatedSection from '@/components/AnimatedSection';
 import QuoteModal from '@/components/QuoteModal';
@@ -347,6 +348,99 @@ export default function HomePage() {
           <div style={{ height: '8px', width: '100%', display: 'flex', marginTop: '60px' }}>
              <div style={{ width: '30%', background: '#003366' }}></div>
              <div style={{ width: '70%', background: '#10B981' }}></div>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== WE ARE HIRING SPOTLIGHT ===== */}
+      <section className="section section-grey reveal-section" style={{ padding: '80px 0', borderTop: '1px solid #E2E8F0', borderBottom: '1px solid #E2E8F0' }}>
+        <div className="container">
+          <div style={{
+            background: 'linear-gradient(135deg, #003366 0%, #001f3f 70%, #059669 130%)',
+            borderRadius: 28,
+            padding: '56px 44px',
+            color: 'white',
+            position: 'relative',
+            overflow: 'hidden',
+            boxShadow: '0 20px 50px rgba(0, 51, 102, 0.2)'
+          }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 40, alignItems: 'center' }}>
+              <div>
+                <div style={{
+                  display: 'inline-flex', alignItems: 'center', gap: 8,
+                  background: 'rgba(16, 185, 129, 0.2)', border: '1px solid rgba(16, 185, 129, 0.4)',
+                  padding: '6px 16px', borderRadius: 100, fontSize: '0.85rem', fontWeight: 700,
+                  color: '#34D399', textTransform: 'uppercase', marginBottom: 20
+                }}>
+                  <Sparkles size={16} /> WE ARE HIRING!
+                </div>
+
+                <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 800, lineHeight: 1.15, marginBottom: 16 }}>
+                  Join Our Team as a <span style={{ color: '#34D399' }}>Solar Sales Executive</span>
+                </h2>
+
+                <p style={{ color: 'rgba(255, 255, 255, 0.85)', fontSize: '1.05rem', lineHeight: 1.7, marginBottom: 24, maxWidth: '520px' }}>
+                  Let&apos;s power homes, businesses and a better future! We are looking for enthusiastic, target-driven individuals to help us lead Kerala&apos;s clean energy revolution.
+                </p>
+
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 32 }}>
+                  {[
+                    'Attractive Salary with Rewarding Performance Incentives',
+                    'Full Training & Fast-Track Career Growth',
+                    'Supportive, Energetic Team Environment',
+                    'Minimum 12th Pass / Any Degree (Freshers Welcome)'
+                  ].map((perk, i) => (
+                    <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 10, fontSize: '0.95rem', color: 'rgba(255, 255, 255, 0.9)' }}>
+                      <CheckCircle2 size={18} color="#34D399" style={{ flexShrink: 0 }} />
+                      <span>{perk}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
+                  <Link href="/careers#apply-now" className="btn-primary" style={{ background: '#10B981', color: 'white', textDecoration: 'none' }}>
+                    Apply & Upload Resume <ArrowRight size={18} />
+                  </Link>
+                  <a
+                    href="https://wa.me/918129920094?text=Hi%20GreenVolt,%20I%20am%20interested%20in%20applying%20for%20the%20Solar%20Sales%20Executive%20role."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-secondary"
+                    style={{ background: 'rgba(255, 255, 255, 0.1)', color: 'white', borderColor: 'rgba(255, 255, 255, 0.3)', display: 'inline-flex', alignItems: 'center', gap: 8, textDecoration: 'none' }}
+                  >
+                    <Phone size={16} /> WhatsApp: 8129920094
+                  </a>
+                </div>
+              </div>
+
+              {/* Flyer Thumbnail Card */}
+              <div style={{ display: 'flex', justifyContent: 'center' }}>
+                <Link href="/careers" style={{ textDecoration: 'none', display: 'block', maxWidth: '340px', width: '100%' }}>
+                  <motion.div
+                    whileHover={{ scale: 1.03, y: -5 }}
+                    style={{
+                      background: 'white', borderRadius: 20, overflow: 'hidden',
+                      boxShadow: '0 15px 40px rgba(0,0,0,0.3)', position: 'relative'
+                    }}
+                  >
+                    <div style={{ position: 'relative', width: '100%', height: '440px' }}>
+                      <Image
+                        src="/images/hiring-poster.jpg"
+                        alt="GreenVolt We Are Hiring Solar Sales Executive"
+                        fill
+                        style={{ objectFit: 'cover' }}
+                        unoptimized
+                      />
+                    </div>
+                    <div style={{ padding: '16px', textAlign: 'center', background: '#FFFFFF', borderTop: '1px solid #E2E8F0' }}>
+                      <span style={{ color: 'var(--secondary)', fontWeight: 700, fontSize: '0.9rem', display: 'inline-flex', alignItems: 'center', gap: 6 }}>
+                        <Briefcase size={16} color="#10B981" /> Click to View Details & Apply →
+                      </span>
+                    </div>
+                  </motion.div>
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>

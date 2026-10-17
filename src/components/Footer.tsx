@@ -34,6 +34,7 @@ export default function Footer() {
                         <li><Link href="/projects">Projects</Link></li>
                         <li><Link href="/solar-calculator">Solar Calculator</Link></li>
                         <li><Link href="/about">About Us</Link></li>
+                        <li><Link href="/careers">Careers (We&apos;re Hiring!)</Link></li>
                         <li><Link href="/contact">Contact</Link></li>
                     </ul>
                 </div>
