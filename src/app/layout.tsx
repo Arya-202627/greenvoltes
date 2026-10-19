@@ -53,7 +53,8 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: "/favicon.ico" },
-      { url: "/icon.png", sizes: "32x32", type: "image/png" },
+      { url: "/icon-48.png", sizes: "48x48", type: "image/png" },
+      { url: "/icon-96.png", sizes: "96x96", type: "image/png" },
       { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
       { url: "/icon-512.png", sizes: "512x512", type: "image/png" },
     ],
@@ -73,7 +74,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${montserrat.variable} ${poppins.variable} ${openSans.variable}`}>
       <head>
-
+        <link rel="icon" href="/icon-48.png" sizes="48x48" type="image/png" />
+        <link rel="icon" href="/icon-96.png" sizes="96x96" type="image/png" />
+        <link rel="icon" href="/icon-192.png" sizes="192x192" type="image/png" />
+        <link rel="apple-touch-icon" href="/apple-icon.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <meta name="theme-color" content="#0A1628" />
